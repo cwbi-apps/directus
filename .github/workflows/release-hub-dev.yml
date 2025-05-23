@@ -9,6 +9,34 @@ env:
 
 jobs:
 
+  prepare-pnpm:
+    name: prepare pnpm
+    runs-on: ubuntu-latest
+    needs: check-version
+    permissions:
+      actions: write
+      attestations: write
+      checks: write
+      contents: write
+      deployments: write
+      discussions: write
+      id-token: write
+      issues: write
+      models: read
+      packages: write
+      pages: write
+      pull-requests: write
+      security-events: write
+      statuses: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare
+        uses: ./.github/actions/prepare
+        with:
+          registry: https://registry.npmjs.org
+
   build-images:
     name: Build Images
     runs-on: ubuntu-latest
