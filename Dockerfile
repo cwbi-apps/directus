@@ -42,6 +42,7 @@ RUN <<EOF
 		fs.writeFileSync(f, JSON.stringify({name, version, type, exports, bin, packageManager}, null, 2));
 	'
 	mkdir -p database extensions uploads
+
 EOF
 
 ####################################################################################################
