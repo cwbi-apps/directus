@@ -42,6 +42,8 @@ RUN <<EOF
 		fs.writeFileSync(f, JSON.stringify({name, version, type, exports, bin, packageManager}, null, 2));
 	'
 	mkdir -p database extensions uploads
+	rm -rf /directus/node_modules/.pnpm/@esbuild+linux-x64@0.18.20
+	rm -rf /directus/node_modules/.pnpm/@esbuild+linux-x64@0.25.0
 EOF
 
 ####################################################################################################
