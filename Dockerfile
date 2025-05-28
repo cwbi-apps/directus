@@ -44,6 +44,8 @@ RUN <<EOF
 	mkdir -p database extensions uploads
 	rm -rf /directus/node_modules/.pnpm/@esbuild+linux-x64@0.18.20
 	rm -rf /directus/node_modules/.pnpm/@esbuild+linux-x64@0.25.0
+	rm -rf /directus/node_modules/.pnpm/@esbuild+linux-arm64@0.18.20
+	rm -rf /directus/node_modules/.pnpm/@esbuild+linux-arm64@0.25.0
 EOF
 
 ####################################################################################################
