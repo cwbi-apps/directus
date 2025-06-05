@@ -56,7 +56,7 @@ RUN npm install --global \
 
 USER node
 
-WORKDIR /directus
+WORKDIR /directus 
 
 ENV \
 	DB_CLIENT="sqlite3" \
