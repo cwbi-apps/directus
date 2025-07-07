@@ -42,6 +42,7 @@ RUN <<EOF
 		fs.writeFileSync(f, JSON.stringify({name, version, type, exports, bin, packageManager}, null, 2));
 	'
 	mkdir -p database extensions uploads
+
 EOF
 
 ####################################################################################################
@@ -55,7 +56,7 @@ RUN npm install --global \
 
 USER node
 
-WORKDIR /directus
+WORKDIR /directus 
 
 ENV \
 	DB_CLIENT="sqlite3" \
@@ -65,6 +66,16 @@ ENV \
 
 COPY --from=builder --chown=node:node /directus/ecosystem.config.cjs .
 COPY --from=builder --chown=node:node /directus/dist .
+
+USER root
+
+RUN rm -rf /directus/node_modules/.pnpm/@esbuild+linux-x64@0.18.20
+RUN rm -rf /directus/node_modules/.pnpm/@esbuild+linux-x64@0.25.0
+RUN rm -rf /directus/node_modules/.pnpm/@esbuild+linux-arm64@0.18.20
+RUN rm -rf /directus/node_modules/.pnpm/@esbuild+linux-arm64@0.25.0
+RUN rm -rf /directus/node_modules/.pnpm/esbuild@0.18.20/
+
+USER node
 
 EXPOSE 8055
 
