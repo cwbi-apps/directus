@@ -130,8 +130,8 @@ catalogs:
       specifier: 5.1.2
       version: 5.1.2
     '@modelcontextprotocol/sdk':
-      specifier: 1.21.1
-      version: 1.21.1
+      specifier: 1.24.0
+      version: 1.24.0
     '@ngneat/falso':
       specifier: 8.0.2
       version: 8.0.2
@@ -1034,7 +1034,7 @@ importers:
         version: 4.12.1
       '@modelcontextprotocol/sdk':
         specifier: 'catalog:'
-        version: 1.21.1
+        version: 1.24.0(zod@4.1.12)
       '@rollup/plugin-alias':
         specifier: 'catalog:'
         version: 5.1.1(rollup@4.52.5)
@@ -4855,11 +4855,12 @@ packages:
   '@minimistjs/subarg@1.0.0':
     resolution: {integrity: sha512-Q/ONBiM2zNeYUy0mVSO44mWWKYM3UHuEK43PKIOzJCbvUnPoMH1K+gk3cf1kgnCVJFlWmddahQQCmrmBGlk9jQ==}
 
-  '@modelcontextprotocol/sdk@1.21.1':
-    resolution: {integrity: sha512-UyLFcJLDvUuZbGnaQqXFT32CpPpGj7VS19roLut6gkQVhb439xUzYWbsUvdI3ZPL+2hnFosuugtYWE0Mcs1rmQ==}
+  '@modelcontextprotocol/sdk@1.24.0':
+    resolution: {integrity: sha512-D8h5KXY2vHFW8zTuxn2vuZGN0HGrQ5No6LkHwlEA9trVgNdPL3TF1dSqKA7Dny6BbBYKSW/rOBDXdC8KJAjUCg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@cfworker/json-schema': ^4.1.1
+      zod: ^3.25 || ^4.0
     peerDependenciesMeta:
       '@cfworker/json-schema':
         optional: true
@@ -9815,6 +9816,9 @@ packages:
   jose@4.15.9:
     resolution: {integrity: sha512-1vUQX+IdDMVPj4k8kOxgUqlcK518yluMuGZwqlr44FS1ppZB/5GWh4rZG89erpOBOJjU/OBsnCVFfapsRz6nEA==}
 
+  jose@6.1.3:
+    resolution: {integrity: sha512-0TpaTfihd4QMNwrz/ob2Bp7X04yuxJkjRGi4aKmOqwhov54i6u79oCv7T+C7lo70MKH6BesI3vscD1yb/yzKXQ==}
+
   joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
     engines: {node: '>=10'}
@@ -13458,46 +13462,6 @@ packages:
       yaml:
         optional: true
 
-  vite@7.1.5:
-    resolution: {integrity: sha512-4cKBO9wR75r0BeIWWWId9XK9Lj6La5X846Zw9dFfzMRw38IlTk2iCcUt6hsyiDRcPidc55ZParFYDXi0nXOeLQ==}
-    engines: {node: ^20.19.0 || >=22.12.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': ^20.19.0 || >=22.12.0
-      jiti: '>=1.21.0'
-      less: ^4.0.0
-      lightningcss: ^1.21.0
-      sass: ^1.70.0
-      sass-embedded: ^1.70.0
-      stylus: '>=0.54.8'
-      sugarss: ^5.0.0
-      terser: ^5.16.0
-      tsx: ^4.8.1
-      yaml: ^2.4.2
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      jiti:
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      sass-embedded:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-      tsx:
-        optional: true
-      yaml:
-        optional: true
-
   vitest@1.6.1:
     resolution: {integrity: sha512-Ljb1cnSJSivGN0LqXd/zmDbWEM0RNNg2t1QW/XUhYl/qPqyu7CsqeWtqQXHVaJsecLPuDoak2oJcZN2QoRIOag==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -13870,19 +13834,16 @@ packages:
   zhead@2.2.4:
     resolution: {integrity: sha512-8F0OI5dpWIA5IGG5NHUg9staDwz/ZPxZtvGVf01j7vHqSyZ0raHY+78atOVxRqb73AotX22uV1pXt3gYSstGag==}
 
-  zod-to-json-schema@3.24.6:
-    resolution: {integrity: sha512-h/z3PKvcTcTetyjl1fkj79MHNEjm+HpD6NXheWjzOekY7kV+lwDYnHw+ivHkijnCSMz1yJaWBD9vu/Fcmk+vEg==}
+  zod-to-json-schema@3.25.0:
+    resolution: {integrity: sha512-HvWtU2UG41LALjajJrML6uQejQhNJx+JBO9IflpSja4R03iNWfKXrj6W2h7ljuLyc1nKS+9yDyL/9tD1U/yBnQ==}
     peerDependencies:
-      zod: ^3.24.1
+      zod: ^3.25 || ^4
 
   zod-validation-error@4.0.2:
     resolution: {integrity: sha512-Q6/nZLe6jxuU80qb/4uJ4t5v2VEZ44lzQjPDhYJNztRQ4wyWc6VF3D3Kb/fAuPetZQnhS3hnajCf9CsWesghLQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
-
-  zod@3.25.76:
-    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
   zod@4.1.12:
     resolution: {integrity: sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ==}
@@ -16226,7 +16187,7 @@ snapshots:
     dependencies:
       minimist: 1.2.8
 
-  '@modelcontextprotocol/sdk@1.21.1':
+  '@modelcontextprotocol/sdk@1.24.0(zod@4.1.12)':
     dependencies:
       ajv: 8.17.1
       ajv-formats: 3.0.1(ajv@8.17.1)
@@ -16237,10 +16198,11 @@ snapshots:
       eventsource-parser: 3.0.6
       express: 5.1.0
       express-rate-limit: 7.5.1(express@5.1.0)
+      jose: 6.1.3
       pkce-challenge: 5.0.0
       raw-body: 3.0.1
-      zod: 3.25.76
-      zod-to-json-schema: 3.24.6(zod@3.25.76)
+      zod: 4.1.12
+      zod-to-json-schema: 3.25.0(zod@4.1.12)
     transitivePeerDependencies:
       - supports-color
 
@@ -21924,6 +21886,8 @@ snapshots:
 
   jose@4.15.9: {}
 
+  jose@6.1.3: {}
+
   joycon@3.1.1: {}
 
   js-base64@3.7.8: {}
@@ -26499,14 +26463,12 @@ snapshots:
 
   zhead@2.2.4: {}
 
-  zod-to-json-schema@3.24.6(zod@3.25.76):
+  zod-to-json-schema@3.25.0(zod@4.1.12):
     dependencies:
-      zod: 3.25.76
+      zod: 4.1.12
 
   zod-validation-error@4.0.2(zod@4.1.12):
     dependencies:
       zod: 4.1.12
-
-  zod@3.25.76: {}
 
   zod@4.1.12: {}
