@@ -75,6 +75,7 @@ RUN rm -rf /directus/node_modules/.pnpm/@esbuild+linux-arm64@0.18.20
 RUN rm -rf /directus/node_modules/.pnpm/@esbuild+linux-arm64@0.25.0
 RUN rm -rf /directus/node_modules/.pnpm/esbuild@0.18.20/
 RUN rm -rf /directus/node_modules/.pnpm/@esbuild+linux-x64@0.25.11/
+RUN rm -rf /directus/node_modules/.pnpm/@esbuild+linux-x64@0.26.0/
 
 USER node
 
