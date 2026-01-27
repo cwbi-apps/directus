@@ -134,7 +134,6 @@ create_policy: पॉलिसी तयार करा
 create_user: युजर तयार करा
 message: संदेश
 delete_panel: पॅनेल हटवा
-create_webhook: वेबहुक तयार करा
 create_custom_translation: सानुकूल भाषांतर तयार करा
 edit_custom_translation: सानुकूल भाषांतर संपादित करा
 no_custom_translations: सानुकूल भाषांतरे नाहीत
@@ -159,21 +158,13 @@ version: आवृत्ती
 version_key: व्हर्जन की
 version_name: व्हर्जन चे नाव
 main_version: मुख्य
-switch_version: व्हर्जन स्विच करा
+switch_version: व्हर्जन स्विच करा 
 switch_version_copy: तुम्हाला खात्री आहे की तुम्ही "{version}" व्हर्जन वरती स्विच करू इच्छिता? जतन केले नाहीत असे बदल गमावले जातील.
 create_version: व्हर्जन तयार करा
 rename_version: व्हर्जन नाव बदला
 compare_version: व्हर्जन तुलना करा
 save_version: व्हर्जन जतन करा
 promote_version: व्हर्जन प्रमोट करा
-promote_version_disabled: बदल नाही
-promote_version_drawer_title: '{version} ला मेन मध्ये प्रमोट करा'
-promote_version_changes: बदल
-promote_version_preview: प्रिव्हियू
-outdated_notice: >-
-  हे व्हर्जन तयार केल्यापासून मुख्य आयटम अपडेट केला गेला आहे. कृपया खालील सर्व फील्ड व्हॅल्यू चेक करा आणि मुख्य आयटम मध्ये हे व्हर्जन प्रमोट करताना कोणते व्हर्जन वापरले जावे याची पुष्टी करा.
-promote_notice: >-
-  कृपया खालील सर्व फील्ड व्हॅल्यू चेक करा आणि मुख्य आयटम मध्ये या आवृत्तीचा प्रचार करताना कोणती आवृत्ती वापरली जावी याची पुष्टी करा.
 delete_version: व्हर्जन डिलीट करा
 delete_version_copy: >-
   तुम्हाला खात्री आहे की तुम्ही "{version}" व्हर्जन डिलीट करू इच्छिता? ही क्रिया पूर्ववत केली जाऊ शकत नाही.
@@ -188,7 +179,7 @@ delete_global_bookmark: "ग्लोबल बुकमार्क डिल�
 logoutReason:
   SIGN_OUT: साइन आउट केले
   SESSION_EXPIRED: सेशन कालबाह्य झाले
-public_label: पब्लिक
+public_label: पब्लिक 
 public_description: प्रमाणीकरणाशिवाय कोणता API डेटा उपलब्ध आहे हे नियंत्रित करते.
 public_role_info: >-
   पब्लिक रोल अनधिकृत USER साठी किंवा रोल नसलेल्या USER साठी कोणता API डेटा उपलब्ध आहे हे नियंत्रित करते. पब्लिक रोल असलेल्या विनंत्यांना APP किंवा प्रशासक प्रवेश असू शकत नाही. पब्लिक रोल साठी नियुक्त केलेल्या धोरणास APP किंवा प्रशासक प्रवेश दिला असल्यास त्याकडे दुर्लक्ष केले जाईल.
@@ -447,6 +438,7 @@ confirm_revert_body: हे आयटम निवडलेल्या स्�
 display: डिस्प्ले
 settings_update_success: सेटिंग्ज अपडेट केल्या
 title: शीर्षक
+subtitle: उपशीर्षक
 revision_delta_created: तयार केले
 revision_delta_created_externally: बाहेरून तयार केले
 revision_delta_updated: '1 फील्ड अपडेट केली | {count} फील्ड अपडेट केली'
@@ -636,12 +628,6 @@ file_count: 'फाइल नाहीत | एक फाईल | {count} फा
 no_files_copy: येथे कोणत्याही फाइल्स नाहीत
 user_count: 'वापरकर्ते नाहीत | एक वापरकर्ता | {count} वापरकर्ते'
 no_users_copy: या भूमिकेत अद्याप कोणतेही वापरकर्ते नाहीत
-webhooks_count: 'वेबहुक्स नाहीत | एक वेबहुक | {count} वेबहुक'
-webhooks_deprecation_notice: |
-  वेबहुक नापसंत केले आहेत आणि पुढील वापरास परावृत्त केले आहे.
-
-  कृपया त्याऐवजी [Webhook / Request URL ऑपरेशन](https://docs.directus.io/app/flows/operations.html#webhook-request-url) सोबत वापरा.
-no_webhooks_copy: अद्याप कोणतेही वेबहुक कॉन्फिगर केलेले नाहीत. खाली एक तयार करून प्रारंभ करा.
 no_notifications: कोणत्याही सूचना नाहीत
 no_notifications_copy: तुम्ही सर्व पाहिले आहात!
 activity_log: ऍक्टिव्हिटी लॉग
@@ -672,7 +658,6 @@ action: कृती
 ip_address: IP Address
 user_agent: युजर एजंट
 origin: उगम
-webhooks: वेबहुक
 decimals: दशांश
 value_decimals: मूल्य दशांश
 min_value: किमान मूल्य
@@ -756,7 +741,6 @@ errors:
   VALUE_OUT_OF_RANGE: मूल्य श्रेणीबाहेर आहे
   VALUE_TOO_LONG: मूल्य खूप मोठे आहे
 security: सुरक्षा
-value_hashed: मूल्य सुरक्षितपणे हॅश केलेले
 bookmark_name: बुकमार्क नाव...
 create_bookmark: बुकमार्क तयार करा
 edit_bookmark: एडिट बुकमार्क
@@ -932,10 +916,8 @@ label: लेबल
 flows: फ्लोव
 flow: फ्लोव
 select_a_flow: फ्लो सिलेक्ट करा
-run_flow_confirm: तुमची खात्री आहे की तुम्ही हा प्रवाह कार्यान्वित करू इच्छिता?
 run_flow_on_current_collection: वर्तमान संकलनावर प्रवाह चालवा
 run_flow_on_current: वर्तमान आयटमवर फ्लो चालवा
-run_flow_on_current_edited_confirm: हा आयटम या प्रवाहाद्वारे अद्यतनित केला जाऊ शकतो, तुमची खात्री आहे की तुम्ही ते कार्यान्वित करू इच्छिता?
 run_flow_on_selected: प्रथम एक किंवा अधिक आयटम निवडा | 1 निवडलेल्या आयटमवर फ्लो चालवा | निवडलेल्या {n} आयटमवर फ्लो चालवा
 run_flow: रन फ्लो
 field_name_placeholder: फील्डचे नाव एंटर करा...
@@ -1121,7 +1103,6 @@ settings_roles: वापरकर्ता भूमिका
 settings_permissions: प्रवेश धोरणे
 settings_project: सेटिंग्ज
 settings_appearance: देखावा
-settings_webhooks: वेबहुक
 settings_flows: फ्लोव
 settings_system_logs: सिस्टम लॉग
 settings_presets: बुकमार्क
@@ -1149,48 +1130,6 @@ discard_changes_copy: तुमची खात्री आहे की तु
 show_x_axis: X अक्ष दाखवा
 show_y_axis: Y अक्ष दाखवा
 keep_editing: एडिट करत रहा
-page_help_collections_overview: '**कलेक्शन ओव्हर व्हिव** — तुम्हाला प्रवेश असलेल्या सर्व संग्रहांची सूची'
-page_help_collections_collection: >-
-  **आयटम ब्राउझ करा** — तुम्हाला ॲक्सेस असलेल्या सर्व {collection} आयटमची सूची देते. आपले दृश्य तयार करण्यासाठी लेआउट, फिल्टर आणि क्रमवारी सानुकूलित करा आणि द्रुत प्रवेशासाठी या भिन्न कॉन्फिगरेशनचे बुकमार्क देखील जतन करा.
-page_help_collections_item: >-
-  **आयटम तपशील** — हा आयटम पाहण्यासाठी आणि व्यवस्थापित करण्यासाठी एक फॉर्म. या साइडबारमध्ये पुनरावृत्ती आणि एम्बेड केलेल्या टिप्पण्यांचा पूर्ण इतिहास देखील आहे.
-page_help_activity_collection: >-
-  **ॲक्टिव्हिटी ब्राउझ करा** — तुमच्या सर्व वापरकर्त्याच्या सिस्टीमची आणि सामग्री क्रियाकलापांची सर्वसमावेशक सूची.
-page_help_docs_global: >-
-  **दस्तऐवजीकरण विहंगावलोकन** — दस्तऐवज विशेषतः या प्रकल्पाच्या आवृत्ती आणि स्कीमासाठी तयार केले आहेत.
-page_help_files_collection: >-
-  **फाइल लायब्ररी** — या प्रकल्पात अपलोड केलेल्या सर्व फाइल मालमत्तांची यादी करते. आपले दृश्य तयार करण्यासाठी लेआउट, फिल्टर आणि क्रमवारी सानुकूलित करा आणि द्रुत प्रवेशासाठी या भिन्न कॉन्फिगरेशनचे बुकमार्क देखील जतन करा.
-page_help_files_item: >-
-  **फाइल तपशील** — फाइल मेटाडेटा व्यवस्थापित करण्यासाठी, मूळ मालमत्ता संपादित करण्यासाठी आणि प्रवेश सेटिंग्ज अद्यतनित करण्यासाठी एक फॉर्म.
-page_help_settings_project: "**सेटिंग्ज** — तुमच्या प्रोजेक्टचे ग्लोबल कॉन्फिगरेशन पर्याय"
-page_help_settings_appearance: "**स्वरूप** — तुमच्या प्रकल्पाचे स्वरूप आणि थीमिंग पर्याय."
-page_help_settings_extensions: '**विस्तार** — तुमच्या प्रकल्पामध्ये स्थापित केलेले विस्तार.'
-page_help_settings_datamodel_collections: >-
-  **डेटा मॉडेल: संग्रह** — उपलब्ध सर्व संग्रहांची यादी करते. यामध्ये दृश्यमान, लपलेले आणि सिस्टम कलेक्शन, तसेच अव्यवस्थापित डेटाबेस टेबल समाविष्ट आहेत जे जोडले जाऊ शकतात.
-page_help_settings_datamodel_fields: >-
-  **डेटा मॉडेल: संकलन** — हा संग्रह आणि त्याची फील्ड व्यवस्थापित करण्यासाठी एक फॉर्म.
-page_help_settings_system_logs: '**सिस्टम लॉग** — सिस्टम लॉगच्या थेट प्रवाहात प्रवेश करा'
-page_help_settings_policies_collection: '**नीती ब्राउझ करा** — प्रकल्पातील सर्व धोरणांची सूची.'
-page_help_settings_roles_collection: '**भूमिका ब्राउझ करा** — प्रकल्पातील सर्व वापरकर्त्यांच्या भूमिकांची सूची.'
-page_help_settings_roles_item: "**भूमिका तपशील** — भूमिकेच्या परवानग्या आणि इतर सेटिंग्ज व्यवस्थापित करा."
-page_help_settings_presets_collection: >-
-  **प्रीसेट ब्राउझ करा** — प्रकल्पातील सर्व प्रीसेट सूचीबद्ध करा, यासह: वापरकर्ता, भूमिका आणि जागतिक बुकमार्क, तसेच डीफॉल्ट दृश्ये.
-page_help_settings_presets_item: >-
-  **प्रीसेट तपशील** — बुकमार्क आणि डीफॉल्ट संग्रह प्रीसेट व्यवस्थापित करण्यासाठी एक फॉर्म.
-page_help_settings_webhooks_collection: '**वेबहुक ब्राउझ करा** — प्रोजेक्टमधील सर्व वेबहुकची सूची.'
-page_help_settings_webhooks_item: '**वेबहुक तपशील** — प्रोजेक्ट वेबहुक तयार आणि व्यवस्थापित करण्यासाठी एक फॉर्म.'
-page_help_settings_flows_collection: '**प्रवाह ब्राउझ करा** — प्रकल्पातील सर्व प्रवाहांची यादी करा.'
-page_help_settings_flows_item: '**प्रवाह तपशील** — एक किंवा अधिक ऑपरेशन्स व्यवस्थापित करण्यासाठी कार्यक्षेत्र.'
-page_help_settings_translations_collection: '**कस्टम भाषांतरे ब्राउझ करा** — प्रकल्पातील सर्व सानुकूल भाषांतरांची यादी करा.'
-page_help_settings_translations_item: '**कस्टम भाषांतर तपशील** — हा आयटम पाहण्यासाठी आणि व्यवस्थापित करण्यासाठी एक फॉर्म'
-page_help_users_collection: '**वापरकर्ता निर्देशिका** — या प्रकल्पातील सर्व सिस्टम वापरकर्त्यांची यादी करते.'
-page_help_users_item: >-
-  **वापरकर्ता तपशील** — तुमची खाते माहिती व्यवस्थापित करा किंवा इतर वापरकर्त्यांचे तपशील पहा.
-page_help_insights_overview: '**अंतर्दृष्टी** — तुम्हाला प्रवेश असलेल्या डॅशबोर्डची सूची.'
-page_help_insights_dashboard: '**डॅशबोर्ड** — एक किंवा अधिक पॅनेल व्यवस्थापित करण्यासाठी कार्यस्थान'
-page_help_marketplace_account: '**खाते** — प्रकाशित विस्ताराचा प्रकाशक किंवा देखभालकर्ता.'
-page_help_marketplace_registry: '**रजिस्ट्री** — डायरेक्टस मार्केटप्लेसमध्ये विस्तार उपलब्ध आहेत'
-page_help_marketplace_extension: '**विस्तार** — डायरेक्टस मार्केटप्लेसमधील विस्तार.'
 activity_feed: ऍक्टिव्हिटी फीड
 add_new: नवीन ऍड करा
 create_new: नवीन तयार करा
@@ -1226,7 +1165,6 @@ directus_collection:
   directus_dashboards: इनसाइट्स मॉड्यूलमधील डॅशबोर्ड
   directus_fields: अतिरिक्त फील्ड कॉन्फिगरेशन आणि मेटाडेटा
   directus_files: सर्व व्यवस्थापित फाइल मालमत्तेसाठी मेटाडेटा
-  directus_flows: ऑटोमेशन फ्लोव
   directus_folders: फायलींसाठी आभासी निर्देशिका प्रदान करते
   directus_migrations: तुम्ही डेटाबेसची कोणती आवृत्ती वापरत आहात
   directus_notifications: वापरकर्त्यांना सूचना पाठवल्या
@@ -1242,7 +1180,6 @@ directus_collection:
   directus_settings: प्रोजेक्ट कॉन्फिगरेशन पर्याय
   directus_shares: बाह्यरित्या सामायिक केलेल्या आयटमचा मागोवा घेतो
   directus_users: प्लॅटफॉर्मसाठी सिस्टम वापरकर्ते
-  directus_webhooks: इव्हेंट-आधारित HTTP विनंत्यांसाठी कॉन्फिगरेशन
   directus_translations: कस्टम भाषांतरे
   directus_versions: आयटमसाठी सामग्री आवृत्त्या
   directus_extensions: विस्तारांचे कॉन्फिगरेशन
@@ -1420,18 +1357,6 @@ fields:
     admin_access: ऍडमिन प्रवेश
     ip_access: IP प्रवेश
     enforce_tfa: 2FA आवश्यक आहे
-  directus_webhooks:
-    name: नाव
-    method: पद्धत
-    status: स्टेटस
-    data: डेटा
-    header: हेडर
-    value: व्हॅल्यू
-    headers: हेडर ची विनंती करा
-    data_label: इव्हेंट डेटा पाठवा
-    triggers: ट्रिगर
-    actions: ऍक्शन
-    collections: कलेक्शन
 field_options:
   directus_settings:
     project_name_placeholder: माझे प्रोजेक्ट
@@ -1533,19 +1458,6 @@ field_options:
     status_dropdown_suspended: निलंबित
     status_dropdown_archived: संग्रहित
     token: सुरक्षित प्रवेश टोकन प्रविष्ट करा..
-  directus_webhooks:
-    status_options_active: ऍक्टिव्ह
-    status_options_inactive: निष्क्रिय
-    data_label: इव्हेंट डेटा पाठवा
-    triggers_divider: ट्रिगर्स
-    actions_create: तयार करा
-    actions_update: अपडेट करा
-    actions_delete: डिलीट करा
-    actions_login: लॉगिन
-    headers:
-      header: हेडर
-      value: व्हॅल्यू
-      add: हेडर ऍड करा
 no_fields_in_collection: '"{collection}" मध्ये अद्याप कोणतेही फील्ड नाहीत'
 no_value: व्हॅल्यू नाही
 do_nothing: काहीही करू नका
@@ -1572,6 +1484,22 @@ unlimited_usage: अमर्याद वापर
 uses_left: "उपयोग नाही | एक वापर बाकी | {n} डावीकडे वापरते\n"
 no_shares: दाखवण्यासाठी कोणतेही शेअर्स नाहीत
 new_share: नवीन शेअर
+ai:
+  input: इनपुट
+  unknown: अज्ञात
+  settings: सेटिंग्स
+  tool_approval:
+    disabled: बंद करा
+ai_tools:
+  items: आयटम्स
+  files: फाईल्स
+  folders: फोल्डर्स
+  flows: फ्लोव
+  trigger-flow: ट्रिगर प्रवाह
+  operations: संचालन
+  schema: स्कीमा
+  collections: कलेक्शन्स
+  fields: फील्ड
 mcp_prompts_collection_schema:
   messages_role_user: युजर
 expired: कालबाह्य
@@ -1608,7 +1536,6 @@ editing_role: '{role} भूमिका'
 editing_policy: '{policy} धोरण'
 no_permissions: कोणत्याही परवानग्या नाहीत
 permission_add_collection: संग्रह जोडा
-creating_webhook: वेबहुक तयार करत आहे
 default_label: डीफॉल्ट
 delete_label: हटवा
 delete_are_you_sure: >-
@@ -1740,7 +1667,7 @@ interfaces:
     accordion_mode: एकॉर्डियन मोड
     max_one_section_open: कमाल 1 विभाग उघडा
   presentation-links:
-    links: लिंक
+    presentation-links: बटन्स
     style: स्टाईल
     primary: प्राथमिक
     link: लिंक्स
@@ -2062,6 +1989,9 @@ interfaces:
   input-password:
     input-password: इनपुट पासवर्ड
     description: मूल्य लपवण्यासाठी टॉगलसह पासवर्ड इनपुट
+  header:
+    header: हेडर
+    links: लिंक्स
 displays:
   translations:
     translations: भाषांतरे
@@ -2226,7 +2156,7 @@ layouts:
     default_template: कलेक्शन डीफॉल्ट वापरत आहे..
     no_compatible_fields: कोणतीही सुसंगत फील्ड नाहीत
   kanban:
-    name: Kanban
+    name: Kanban 
     group_field: द्वारे गट
     group_field_placeholder: द्वारे गटासाठी फील्ड...
     group_title: गट शीर्षक
@@ -2365,11 +2295,9 @@ triggers:
 a_flow_uuid: ट्रिगर करण्यासाठी एक प्रवाह निवडा...
 any_string_or_json: कोणतीही स्ट्रिंग किंवा JSON...
 item_payload_placeholder: आयटमची फील्ड व्हॅल्यू अपडेट करण्यासाठी वापरला जाणारा JSON आहे...
-operation_variables_note: तुम्ही **{'{'}{'{'}$last{'}'}{'}'}**, **{'{'}{'{'}$trigger{'}'}{'}'}** आणि **{'{'}{'{'}$accountability{'}'}{'}'}** सारख्या व्हेरिएबल्ससह प्रवाह डेटामध्ये प्रवेश करू शकता, किंवा वापरून मागील ऑपरेशन्सचा संदर्भ द्या **{'{'}{'{'}operation_key{'}'}{'}'}**.'
 operations:
   condition:
     name: अट
-    description: If/Else लॉजिकवर आधारित फ्लो रूट करा
   exec:
     name: स्क्रिप्ट चालवा
     description: पेलोड सुधारण्यासाठी अनियंत्रित कोड कार्यान्वित करा
@@ -2453,7 +2381,6 @@ operations:
     description: फ्लोचा JSON पेलोड बदला
   trigger:
     name: ट्रिगर प्रवाह
-    description: हा डेटा दुसर्या प्रवाहात पास करा
     flows: फ्लोव
     flow: फ्लोव
     data: डेटा
