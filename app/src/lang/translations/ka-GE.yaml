@@ -138,7 +138,6 @@ create_policy: პოლიტიკის შექმნა
 create_user: მომხმარებლის შექმნა
 message: შეტყობინება
 delete_panel: პანელის წაშლა
-create_webhook: ვებჰუკის შექმნა
 create_custom_translation: მორგებული თარგმანის შექმნა
 edit_custom_translation: მორგებული თარგმანის რედაქტირება
 no_custom_translations: მორგებული თარგმანები არ არის
@@ -446,6 +445,7 @@ confirm_revert_body: ეს დააბრუნებს ჩანაწერ
 display: ჩვენება
 settings_update_success: პარამეტრები განახლდა
 title: სათაური
+subtitle: ქვესათაური
 revision_delta_created: შეიქმნა
 revision_delta_created_externally: შეიქმნა გარედან
 revision_delta_updated: 'განახლდა 1 ველი | განახლდა {count} ველი'
@@ -640,12 +640,6 @@ file_count: 'ფაილი არ არის | ერთი ფაილი 
 no_files_copy: აქ ფაილები არ არის.
 user_count: 'მომხმარებელი არ არის | ერთი მომხმარებელი | {count} მომხმარებელი'
 no_users_copy: ამ როლში მომხმარებლები ჯერ არ არიან.
-webhooks_count: 'ვებჰუკი არ არის | ერთი ვებჰუკი | {count} ვებჰუკი'
-webhooks_deprecation_notice: |
-  ვებჰუკები მოძველებულია და მათი შემდგომი გამოყენება არ არის რეკომენდებული.
-
-  გთხოვთ, გამოიყენოთ **ნაკადები** [ვებჰუკი / მოთხოვნის URL ოპერაციით](https://docs.directus.io/app/flows/operations.html#webhook-request-url).
-no_webhooks_copy: ვებჰუკები ჯერ არ არის დაკონფიგურირებული. დასაწყებად შექმენით ერთი ქვემოთ.
 no_notifications: შეტყობინებები არ არის
 no_notifications_copy: ყველაფერი წესრიგშია!
 activity_log: აქტივობის ჟურნალი
@@ -676,7 +670,6 @@ action: მოქმედება
 ip_address: IP მისამართი
 user_agent: მომხმარებლის აგენტი
 origin: წყარო
-webhooks: ვებჰუკები
 decimals: ათწილადები
 value_decimals: მნიშვნელობის ათწილადები
 min_value: მინ. მნიშვნელობა
@@ -761,7 +754,6 @@ errors:
   VALUE_OUT_OF_RANGE: მნიშვნელობა დიაპაზონს სცდება
   VALUE_TOO_LONG: მნიშვნელობა ძალიან გრძელია
 security: უსაფრთხოება
-value_hashed: მნიშვნელობა უსაფრთხოდ დაჰეშირდა
 bookmark_name: სანიშნის სახელი...
 create_bookmark: სანიშნის შექმნა
 edit_bookmark: სანიშნის რედაქტირება
@@ -937,10 +929,8 @@ label: იარლიყი
 flows: ნაკადები
 flow: ნაკადი
 select_a_flow: აირჩიეთ ნაკადი
-run_flow_confirm: დარწმუნებული ხართ, რომ გსურთ ამ ნაკადის შესრულება?
 run_flow_on_current_collection: პროცესის გაშვება მიმდინარე კოლექციაზე
 run_flow_on_current: პროცესის გაშვება მიმდინარე ჩანაწერზე
-run_flow_on_current_edited_confirm: ეს ჩანაწერი შეიძლება განახლდეს ამ პროცესით, დარწმუნებული ხართ, რომ გსურთ მისი შესრულება?
 run_flow_on_selected: ჯერ აირჩიეთ ერთი ან მეტი ჩანაწერი | პროცესის გაშვება 1 არჩეულ ჩანაწერზე | პროცესის გაშვება {n} არჩეულ ჩანაწერზე
 run_flow: პროცესის გაშვება
 trigger_flow_success: პროცესი "{flow}" წარმატებით გაეშვა
@@ -1135,7 +1125,6 @@ settings_roles: მომხმარებლის როლები
 settings_permissions: წვდომის პოლიტიკები
 settings_project: პარამეტრები
 settings_appearance: გარეგნობა
-settings_webhooks: ვებჰუკები
 settings_flows: ნაკადები
 settings_system_logs: სისტემის ჟურნალები
 settings_presets: სანიშნები
@@ -1163,48 +1152,6 @@ discard_changes_copy: დარწმუნებული ხართ, რო�
 show_x_axis: X ღერძის ჩვენება
 show_y_axis: Y ღერძის ჩვენება
 keep_editing: რედაქტირება
-page_help_collections_overview: '**კოლექციების მიმოხილვა** — ყველა კოლექციის სია, რომლებზეც გაქვთ წვდომა.'
-page_help_collections_collection: >-
-  **ჩანაწერების დათვალიერება** — ყველა {collection} ჩანაწერის სია, რომლებზეც გაქვთ წვდომა. შეცვალეთ განლაგება, ფილტრები და დალაგება თქვენი ხედვის მოსარგებად და შეინახეთ ამ სხვადასხვა კონფიგურაციის სანიშნები სწრაფი წვდომისთვის.
-page_help_collections_item: >-
-  **ჩანაწერის დეტალები** — ფორმა ამ ჩანაწერის სანახავად და სამართავად. ეს გვერდითი პანელი ასევე შეიცავს რევიზიების სრულ ისტორიას და ჩაშენებულ კომენტარებს.
-page_help_activity_collection: >-
-  **აქტივობის დათვალიერება** — თქვენი მომხმარებლის სისტემური და კონტენტის აქტივობის სრული სია.
-page_help_docs_global: >-
-  **დოკუმენტაციის მიმოხილვა** — დოკუმენტაცია, რომელიც სპეციალურად ამ პროექტის ვერსიასა და სქემაზეა მორგებული.
-page_help_files_collection: >-
-  **ფაილების ბიბლიოთეკა** — ამ პროექტში ატვირთული ყველა ფაილური რესურსის სია. შეცვალეთ განლაგება, ფილტრები და დალაგება თქვენი ხედვის მოსარგებად და შეინახეთ ამ სხვადასხვა კონფიგურაციის სანიშნები სწრაფი წვდომისთვის.
-page_help_files_item: >-
-  **ფაილის დეტალები** — ფორმა ფაილის მეტამონაცემების სამართავად, ორიგინალური რესურსის რედაქტირებისთვის და წვდომის პარამეტრების განახლებისთვის.
-page_help_settings_project: "**პარამეტრები** — თქვენი პროექტის გლობალური კონფიგურაციის ოფციები."
-page_help_settings_appearance: "**გარეგნობა** — თქვენი პროექტის გარეგნობისა და თემების ოფციები."
-page_help_settings_extensions: '**გაფართოებები** — თქვენს პროექტში დაინსტალირებული გაფართოებები.'
-page_help_settings_datamodel_collections: >-
-  **მონაცემთა მოდელი: კოლექციები** — ხელმისაწვდომი ყველა კოლექციის სია. ეს მოიცავს ხილულ, დამალულ და სისტემურ კოლექციებს, ასევე დაუკონფიგურირებელ მონაცემთა ბაზის ცხრილებს, რომელთა დამატებაც შესაძლებელია.
-page_help_settings_datamodel_fields: >-
-  **მონაცემთა მოდელი: კოლექცია** — ფორმა ამ კოლექციისა და მისი ველების სამართავად.
-page_help_settings_system_logs: '**სისტემის ჟურნალები** — წვდომა სისტემის ჟურნალების პირდაპირ სტრიმზე.'
-page_help_settings_policies_collection: '**პოლიტიკების დათვალიერება** — პროექტში არსებული ყველა პოლიტიკის სია.'
-page_help_settings_roles_collection: '**როლების დათვალიერება** — პროექტში არსებული ყველა მომხმარებლის როლის სია.'
-page_help_settings_roles_item: "**როლის დეტალები** — როლის უფლებებისა და სხვა პარამეტრების მართვა."
-page_help_settings_presets_collection: >-
-  **პრესეტების დათვალიერება** — პროექტში არსებული ყველა პრესეტის სია, მათ შორის: მომხმარებლის, როლის და გლობალური სანიშნები, ასევე ნაგულისხმევი ხედები.
-page_help_settings_presets_item: >-
-  **პრესეტის დეტალები** — ფორმა სანიშნებისა და ნაგულისხმევი კოლექციის პრესეტების სამართავად.
-page_help_settings_webhooks_collection: '**ვებჰუკების დათვალიერება** — პროექტში არსებული ყველა ვებჰუკის სია.'
-page_help_settings_webhooks_item: '**ვებჰუკის დეტალები** — ფორმა პროექტის ვებჰუკების შესაქმნელად და სამართავად.'
-page_help_settings_flows_collection: '**ნაკადების დათვალიერება** — პროექტში არსებული ყველა ნაკადის სია.'
-page_help_settings_flows_item: '**ნაკადის დეტალები** — სამუშაო სივრცე ერთი ან მეტი ოპერაციის სამართავად.'
-page_help_settings_translations_collection: '**მორგებული თარგმანების დათვალიერება** — პროექტში არსებული ყველა მორგებული თარგმანის სია.'
-page_help_settings_translations_item: '**მორგებული თარგმანების დეტალები** — ფორმა ამ ჩანაწერის სანახავად და სამართავად.'
-page_help_users_collection: '**მომხმარებელთა კატალოგი** — ამ პროექტში არსებული ყველა სისტემური მომხმარებლის სია.'
-page_help_users_item: >-
-  **მომხმარებლის დეტალები** — მართეთ თქვენი ანგარიშის ინფორმაცია, ან ნახეთ სხვა მომხმარებლების დეტალები.
-page_help_insights_overview: '**ანალიტიკა** — დაფების სია, რომლებზეც გაქვთ წვდომა.'
-page_help_insights_dashboard: '**დაფა** — სამუშაო სივრცე ერთი ან მეტი პანელის სამართავად'
-page_help_marketplace_account: '**ანგარიში** — გამოქვეყნებული გაფართოების გამომცემელი ან შემნახველი.'
-page_help_marketplace_registry: '**რეესტრი** — Directus-ის მარკეტში ხელმისაწვდომი გაფართოებები.'
-page_help_marketplace_extension: '**გაფართოება** — გაფართოება Directus-ის მარკეტში.'
 activity_feed: აქტივობის ლენტი
 add_new: ახლის დამატება
 create_new: ახლის შექმნა
@@ -1240,7 +1187,6 @@ directus_collection:
   directus_dashboards: დაფები ანალიტიკის მოდულში
   directus_fields: დამატებითი ველის კონფიგურაცია და მეტამონაცემები
   directus_files: მეტამონაცემები ყველა მართული ფაილური რესურსისთვის
-  directus_flows: ავტომატიზაციის ნაკადები
   directus_folders: უზრუნველყოფს ვირტუალურ დირექტორიებს ფაილებისთვის
   directus_migrations: მონაცემთა ბაზის ვერსია, რომელსაც იყენებთ
   directus_notifications: მომხმარებლებისთვის გაგზავნილი შეტყობინებები
@@ -1256,7 +1202,6 @@ directus_collection:
   directus_settings: პროექტის კონფიგურაციის ოფციები
   directus_shares: თვალყურს ადევნებს გარედან გაზიარებულ ჩანაწერებს
   directus_users: სისტემის მომხმარებლები პლატფორმისთვის
-  directus_webhooks: კონფიგურაცია მოვლენებზე დაფუძნებული HTTP მოთხოვნებისთვის
   directus_translations: მორგებული თარგმანები
   directus_versions: კონტენტის ვერსიები ჩანაწერებისთვის
   directus_extensions: გაფართოებების კონფიგურაცია
@@ -1435,18 +1380,6 @@ fields:
     admin_access: ადმინისტრატორზე წვდომა
     ip_access: IP წვდომა
     enforce_tfa: 2FA-ს მოთხოვნა
-  directus_webhooks:
-    name: სახელი
-    method: მეთოდი
-    status: სტატუსი
-    data: მონაცემები
-    header: თავსართი
-    value: მნიშვნელობა
-    headers: მოთხოვნის თავსართები
-    data_label: მოვლენის მონაცემების გაგზავნა
-    triggers: ტრიგერები
-    actions: მოქმედებები
-    collections: კოლექციები
 field_options:
   directus_settings:
     project_name_placeholder: ჩემი პროექტი...
@@ -1548,19 +1481,6 @@ field_options:
     status_dropdown_suspended: შეჩერებული
     status_dropdown_archived: დაარქივებული
     token: შეიყვანეთ უსაფრთხო წვდომის ტოკენი...
-  directus_webhooks:
-    status_options_active: აქტიური
-    status_options_inactive: არააქტიური
-    data_label: მოვლენის მონაცემების გაგზავნა
-    triggers_divider: ტრიგერები
-    actions_create: შექმნა
-    actions_update: განახლება
-    actions_delete: წაშლა
-    actions_login: შესვლა
-    headers:
-      header: თავსართი
-      value: მნიშვნელობა
-      add: თავსართის დამატება
 no_fields_in_collection: '"{collection}"-ში ველები ჯერ არ არის'
 no_value: მნიშვნელობა არ არის
 do_nothing: არაფრის გაკეთება
@@ -1587,6 +1507,22 @@ unlimited_usage: შეუზღუდავი გამოყენება
 uses_left: გამოყენება არ დარჩა | ერთი გამოყენება დარჩა | {n} გამოყენება დარჩა
 no_shares: საჩვენებელი გაზიარებები არ არის
 new_share: ახალი გაზიარება
+ai:
+  input: შეყვანა
+  unknown: უცნობი
+  settings: პარამეტრები
+  tool_approval:
+    disabled: გამორთულია
+ai_tools:
+  items: ჩანაწერები
+  files: ფაილები
+  folders: საქაღალდეები
+  flows: ნაკადები
+  trigger-flow: Flow-ს გაშვება
+  operations: ოპერაციები
+  schema: სქემა
+  collections: კოლექციები
+  fields: ველები
 mcp_prompts_collection_schema:
   messages_role_user: მომხმარებელი
 expired: ვადაგასული
@@ -1623,7 +1559,6 @@ editing_role: '{role} როლი'
 editing_policy: '{policy} პოლიტიკა'
 no_permissions: უფლებები არ არის
 permission_add_collection: კოლექციის დამატება
-creating_webhook: ვებჰუკის შექმნა
 default_label: ნაგულისხმევი
 delete_label: წაშლა
 delete_are_you_sure: >-
@@ -1757,7 +1692,7 @@ interfaces:
     accordion_mode: აკორდეონის რეჟიმი
     max_one_section_open: მაქს. 1 სექცია ღია
   presentation-links:
-    links: ბმულები
+    presentation-links: ღილაკები
     style: სტილი
     primary: პირველადი
     link: ბმულები
@@ -2079,6 +2014,9 @@ interfaces:
   input-password:
     input-password: პაროლის შეყვანა
     description: პაროლის შეყვანა მნიშვნელობის დამალვის გადამრთველით
+  header:
+    header: სათაური
+    links: ბმულები
 displays:
   translations:
     translations: თარგმანები
@@ -2387,11 +2325,9 @@ triggers:
 a_flow_uuid: აირჩიეთ გასააქტიურებელი Flow...
 any_string_or_json: ნებისმიერი სტრიქონი ან JSON...
 item_payload_placeholder: ეს არის JSON, რომელიც გამოიყენება ჩანაწერის ველების მნიშვნელობების განახლებისთვის...
-operation_variables_note: შეგიძლიათ წვდომა იქონიოთ flow-ს მონაცემებზე ისეთი ცვლადებით, როგორიცაა **{'}{'}$last{'}{'}**, **{'}{'}$trigger{'}{'}** და **{'}{'}$accountability{'}{'}**, ან მიუთითოთ წინა ოპერაციებზე **{'}{'}operation_key{'}{'}**-ის გამოყენებით.
 operations:
   condition:
     name: პირობა
-    description: წარმართეთ flow-ს ლოგიკა If / Else-ის მიხედვით
   exec:
     name: სკრიპტის გაშვება
     description: შეასრულეთ ნებისმიერი კოდი payload-ის შესაცვლელად
@@ -2482,7 +2418,6 @@ operations:
     description: შეცვალეთ Flow-ს JSON payload-ი
   trigger:
     name: Flow-ს გაშვება
-    description: გადაეცით ეს მონაცემები სხვა flow-ს
     flows: Flow-ები
     flow: Flow
     data: მონაცემები
