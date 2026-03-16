@@ -295,7 +295,7 @@ catalog:
   stylelint-use-logical: 2.1.2
   swagger-cli: 4.0.4
   swagger-ui-watcher: 2.1.14
-  tar: 7.5.8
+  tar: 7.5.10
   tedious: 18.6.1
   tinymce: 6.8.6
   tmp: 0.2.5
@@ -304,7 +304,7 @@ catalog:
   tus-js-client: 4.3.1
   typescript: 5.9.3
   typescript-eslint: 8.46.4
-  undici: 7.18.2
+  undici: 7.24.4
   universal-cookie: 8.0.1
   unplugin-yaml: 3.0.7
   update-check: 1.5.4
