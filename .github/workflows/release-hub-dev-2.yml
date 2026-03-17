@@ -10,86 +10,18 @@ env:
 
 jobs:
 
-  prepare-pnpm:
-    name: prepare pnpm
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - platform: linux/amd64
-            runner: ubuntu-latest
-          - platform: linux/arm64
-            runner: ubuntu-24.04-arm
-    runs-on: ${{ matrix.runner }}
-    permissions:
-      actions: write
-      attestations: write
-      checks: write
-      contents: write
-      deployments: write
-      discussions: write
-      id-token: write
-      issues: write
-      models: read
-      packages: write
-      pages: write
-      pull-requests: write
-      security-events: write
-      statuses: write
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-
-      - name: Prepare
-        uses: ./.github/actions/prepare
-        with:
-          registry: https://registry.npmjs.org
-
   build-images:
     name: Build Images
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - platform: linux/amd64
-            runner: ubuntu-latest
-          - platform: linux/arm64
-            runner: ubuntu-24.04-arm
-    runs-on: ${{ matrix.runner }}
+    runs-on: ubuntu-latest
     permissions:
-      actions: write
-      attestations: write
-      checks: write
-      contents: write
-      deployments: write
-      discussions: write
-      id-token: write
-      issues: write
-      models: read
+      contents: read
       packages: write
-      pages: write
-      pull-requests: write
-      security-events: write
-      statuses: write
     steps:
-      - name: Prepare
-        run: |
-          platform=${{ matrix.platform }}
-          echo "PLATFORM_SLUG=${platform//\//-}" >> $GITHUB_ENV
-
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
-
-      - name: Cache Docker layers
-        uses: actions/cache@v5
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-${{ env.PLATFORM_SLUG }}-buildx-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.PLATFORM_SLUG }}-buildx-
 
       - name: Login to GHCR
         uses: docker/login-action@v3
@@ -106,15 +38,7 @@ jobs:
           context: .
           file: ./Dockerfile
           tags: ${{ env.GHCR_IMAGE }}:hub-dev-v11.16.1
-          platforms: ${{ matrix.platform }}
+          platforms: linux/amd64
           push: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
-
-      # Temp fix:
-      # https://github.com/docker/build-push-action/issues/252
-      # https://github.com/moby/buildkit/issues/1896
-      - name: Move cache
-        run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
