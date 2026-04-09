@@ -51,9 +51,9 @@ FROM node:${NODE_VERSION}-alpine AS runtime
 
 RUN apk update && apk add --no-cache zlib>1.3
 
-RUN npm install --global \
+RUN npm install -g npm@latest && npm install --global \
 	pm2@5 \
-	corepack@latest # Remove again once corepack >= 0.31 made it into base image
+	corepack@latest --overrides='{"picomatch": "4.0.4"}' # Remove again once corepack >= 0.31 made it into base image
 
 USER node
 
