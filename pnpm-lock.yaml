@@ -949,10 +949,8 @@ overrides:
   anymatch>picomatch: 2.3.2
   picomatch: 4.0.4
   defu: 6.1.5
-  '@hono/node-server@^1.19.10': 1.19.13
   brace-expansion@^2.0.2: 2.0.3
   brace-expansion@^5.0.4: 5.0.5
-  hono@^4.12.4: 4.12.12
   liquidjs@^10.25.0: 10.25.5
   serialize-javascript@^7.0.3: 7.0.5
 
@@ -4773,7 +4771,7 @@ packages:
     resolution: {integrity: sha512-TsQLe4i2gvoTtrHje625ngThGBySOgSK3Xo2XRYOdqGN1teR8+I7vchQC46uLJi8OF62YTYA3AhSpumtkhsaKQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
-      hono: 4.12.12
+      hono: ^4
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
