@@ -1,11 +1,10 @@
-import { REGEX_BETWEEN_PARENS } from '@directus/constants';
 import type { Accountability, Filter, Policy, Role, User } from '@directus/types';
 import { isObjectLike } from 'lodash-es';
-import { adjustDate } from './adjust-date.js';
 import { deepMap } from './deep-map.js';
 import { get } from './get-with-arrays.js';
 import { isObject } from './is-object.js';
 import { parseJSON } from './parse-json.js';
+import { parseNow } from './parse-now.js';
 import { toArray } from './to-array.js';
 
 type ParseFilterContext = {
@@ -102,7 +101,7 @@ export function parsePreset(
 	preset: Record<string, any> | null,
 	accountability: BasicAccountability | null,
 	context: ParseFilterContext,
-) {
+): any {
 	if (!preset) return preset;
 	return deepMap(preset, (value) => {
 		if (value === 'true') return true;
@@ -134,8 +133,6 @@ function parseFilterEntry(
 		};
 	} else if (String(key).startsWith('_') && !bypassOperators.includes(key)) {
 		return { [key]: parseDynamicVariable(value, accountability, context) };
-	} else if (String(key).startsWith('item__') && isObjectLike(value)) {
-		return { [`item:${String(key).split('item__')[1]}`]: parseFilter(value, accountability, context) } as Filter;
 	} else {
 		return { [key]: parseFilterRecursive(value, accountability, context) } as Filter;
 	}
@@ -147,13 +144,7 @@ function parseDynamicVariable(value: any, accountability: BasicAccountability | 
 	}
 
 	if (value.startsWith('$NOW')) {
-		if (value.includes('(') && value.includes(')')) {
-			const adjustment = value.match(REGEX_BETWEEN_PARENS)?.[1];
-			if (!adjustment) return new Date();
-			return adjustDate(new Date(), adjustment);
-		}
-
-		return new Date();
+		return parseNow(value);
 	}
 
 	if (value.startsWith('$CURRENT_USER')) {
