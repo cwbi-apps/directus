@@ -12,6 +12,7 @@ import VPagination from '@/components/v-pagination.vue';
 import VProgressLinear from '@/components/v-progress-linear.vue';
 import { useRevisions } from '@/composables/use-revisions';
 import SidebarDetail from '@/views/private/components/sidebar-detail.vue';
+import { useSidebarStore } from '@/views/private/private-view/stores/sidebar';
 
 const props = defineProps<{
 	flow: FlowRaw;
@@ -27,6 +28,8 @@ const { active: open } = useGroupable({
 	value: title.value,
 	group: 'sidebar-detail',
 });
+
+const sidebarStore = useSidebarStore();
 
 const page = ref<number>(1);
 const selectedRevision = ref();
@@ -61,7 +64,10 @@ function filterRevisions() {
 
 onMounted(() => {
 	getRevisionsCount();
-	if (open.value) getRevisions();
+
+	if (open.value || sidebarStore.activeAccordionItem === 'logs') {
+		getRevisions();
+	}
 });
 
 function onToggle(open: boolean) {
@@ -117,11 +123,11 @@ function onToggle(open: boolean) {
 
 <style lang="scss" scoped>
 .v-progress-linear {
-	margin: 24px 0;
+	margin: 1.375rem 0;
 }
 
 .v-detail + .v-detail {
-	margin-block-start: 12px;
+	margin-block-start: 0.6875rem;
 }
 
 .v-icon {
@@ -131,7 +137,7 @@ function onToggle(open: boolean) {
 .toggle-failed {
 	color: var(--theme--foreground-subdued);
 	transition: color var(--fast) var(--transition);
-	margin-block-end: 24px;
+	margin-block-end: 1.375rem;
 
 	&.active,
 	&:hover {
@@ -153,11 +159,11 @@ function onToggle(open: boolean) {
 
 	&::before {
 		position: absolute;
-		inset-block-start: -4px;
-		inset-inline-start: -4px;
+		inset-block-start: -0.25rem;
+		inset-inline-start: -0.25rem;
 		z-index: 1;
-		inline-size: calc(100% + 8px);
-		block-size: calc(100% + 8px);
+		inline-size: calc(100% + 0.4375rem);
+		block-size: calc(100% + 0.4375rem);
 		background-color: var(--theme--background-accent);
 		border-radius: var(--theme--border-radius);
 		opacity: 0;
@@ -181,18 +187,18 @@ function onToggle(open: boolean) {
 	}
 
 	& + & {
-		margin-block-start: 8px;
+		margin-block-start: 0.4375rem;
 	}
 }
 
 .empty {
-	margin-inline-start: 2px;
+	margin-inline-start: 0.125rem;
 	color: var(--theme--foreground-subdued);
 	font-style: italic;
 }
 
 .v-pagination {
 	justify-content: center;
-	margin-block-start: 32px;
+	margin-block-start: 1.8125rem;
 }
 </style>

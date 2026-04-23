@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useLayout } from '@directus/composables';
+import { useShortcut } from '@directus/composables';
 import { isSystemCollection } from '@directus/system-data';
 import { DeepPartial, Field, Filter, Preset } from '@directus/types';
 import { isEqual } from 'lodash';
@@ -18,7 +19,6 @@ import VForm from '@/components/v-form/v-form.vue';
 import VInfo from '@/components/v-info.vue';
 import VNotice from '@/components/v-notice.vue';
 import { useEditsGuard } from '@/composables/use-edits-guard';
-import { useShortcut } from '@/composables/use-shortcut';
 import { useExtensions } from '@/extensions';
 import { useCollectionsStore } from '@/stores/collections';
 import { usePresetsStore } from '@/stores/presets';
@@ -144,7 +144,7 @@ function useSave() {
 			unexpectedError(error);
 		} finally {
 			saving.value = false;
-			router.push(`/settings/presets`);
+			router.push({ name: 'settings-presets-collection' });
 		}
 	}
 }
@@ -163,7 +163,7 @@ function useDelete() {
 		try {
 			await presetsStore.delete([Number(props.id)]);
 			edits.value = {};
-			router.replace(`/settings/presets`);
+			router.replace({ name: 'settings-presets-collection' });
 		} catch (error) {
 			unexpectedError(error);
 		} finally {
@@ -604,33 +604,33 @@ function discardAndLeave() {
 }
 
 .layout {
-	--content-padding: 0px;
-	--content-padding-bottom: 0px;
+	--content-padding: 0;
+	--content-padding-bottom: 0;
 	--layout-offset-top: 0;
 
 	position: relative;
 	inline-size: 100%;
-	margin-block-start: 32px;
+	margin-block-start: 1.8125rem;
 
 	:deep(#map-container) {
-		min-block-size: 360px;
+		min-block-size: 20.25rem;
 	}
 }
 
 .layout-sidebar {
-	--theme--form--row-gap: 24px;
+	--theme--form--row-gap: 1.375rem;
 
 	display: contents;
 }
 
 :deep(.layout-options) {
-	--theme--form--row-gap: 24px;
+	--theme--form--row-gap: 1.375rem;
 
 	@include mixins.form-grid;
 }
 
 :deep(.layout-options .type-label) {
-	font-size: 1rem;
+	font-size: 0.8125rem;
 }
 
 .subdued {

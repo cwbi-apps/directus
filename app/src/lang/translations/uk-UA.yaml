@@ -500,8 +500,6 @@ revision_delta_reverted: Відновлено
 revision_delta_update_message: Це поле оновлено, але його значення приховується з міркувань безпеки.
 revision_delta_other: Редакція
 revision_delta_by: '{date} {user}'
-updated_in_revision: Оновлено в цій ревізії
-updated_in_revision_matches_latest: Оновлено в цій ревізії, але відповідає останній
 differences_count: 'Без відмінностей | 1 відмінність | {count} відмінностей'
 presentation_text_values_cannot_be_reimported: 'Використовує текст презентації, значення не можуть бути повторно імпортовані.'
 download_page_as_csv: 'Завантажити сторінку у CSV'
@@ -521,6 +519,8 @@ related_collection: Пов'язана колекція
 related_collections: Схожі колекції
 translations_collection: Колекція перекладів
 languages_collection: Колекція мов
+translations_preview_collections: Колекції
+translations_preview_fields: Поля
 import_data_input_placeholder: CSV або JSON...
 import_data_button: Розпочати імпорт
 import_data_indeterminate: Імпорт даних...
@@ -707,7 +707,6 @@ no_collections: Немає колекцій
 create_collection: Створити колекцію
 no_collections_copy_admin: В вас ще немає колекцій. Натисніть кнопку нижче, щоб розпочати.
 no_collections_copy: В вас поки що немає колекцій. Будь ласка, зверніться до свого системного адміністратора.
-relationship_not_setup: Зв’язок не правильно налаштовано
 no_singleton_relations: Зв'язки з одноосібниками не підтримуються
 display_template_not_setup: Параметр шаблону відображення налаштовано неправильно
 collection_field_not_setup: Параметр поля колекції налаштовано неправильно
@@ -827,7 +826,6 @@ unexpected_error_copy: Сталася неочікувана помилка. Б�
 copy_details: Копіювати деталі
 no_app_access: Немає доступу до додатку
 no_app_access_copy: В цього користувача нема дозволу на використовування додатку адміністратора.
-password_reset_sent: Якщо у вас є обліковий запис, ми надіслали вам безпечне посилання для відновлення пароля
 password_reset_successful: Пароль успішно оновлено
 back: Назад
 filter: Фільтр
@@ -1039,6 +1037,15 @@ no_url_copy: Будь ласка, додайте URL-адресу в налаш�
 invalid_url: Недійсна URL-адреса
 invalid_url_copy: Вказана URL-адреса не відповідає жодній URL-адресі, зазначеній у налаштуваннях.
 insights: Статистика
+deployment:
+  provider:
+    settings:
+      delete_confirm: Ця дія постійна і не може бути скасована. Ви впевнені, що хочете продовжити?
+    run:
+      cancel_confirm: Ця дія постійна і не може бути скасована. Ви впевнені, що хочете продовжити?
+      log_all: Усі рівні журналу
+  target_value:
+    preview: Перегляд
 dashboard: Панель приладів
 panel: Панель
 panel_options: Налаштування панелі
@@ -1430,6 +1437,7 @@ fields:
     mcp_system_prompt_enabled_note: "Використовуйте<a href='https://directus.io/docs/guides/ai/mcp#system-prompt' target='_blank'>стандартне системне запитування</a>для керування поведінкою LLM. Вимкніть, щоб видалити або замінити власним запитуванням нижче."
     mcp_system_prompt: Користувацький Системний рядок
     mcp_system_prompt_note: 'Спеціальний запит щодо заміни стандартної системи. Залиште порожнім, щоб використовувати стандартну (якщо вказано вище).'
+    ai_header_name: Заголовок
   directus_shares:
     name: Назва
     role: Роль
@@ -1583,6 +1591,7 @@ live_preview:
   close_window: Відкрити в режимі розділеного екрана
   toggle_3d: Перемикнути 3D
   iframe_title: Попередній перегляд вебсайту
+  display_options: Параметри дисплея
 shares: Акції
 unlimited_usage: Необмежене використання
 uses_left: Не залишилося використань | Залишилося одне використання | {n} використань залишилося
@@ -1591,9 +1600,13 @@ new_share: Нова публікація
 ai:
   input: Введення
   unknown: Невідомо
+  items: Об'єкти
+  content: Вміст
   settings: Налаштування
   tool_approval:
     disabled: Вимкнено
+  ask_user_submit: Підтвердити
+  ask_user_next: Уперед
 ai_tools:
   items: Об'єкти
   files: Файли
@@ -1795,6 +1808,8 @@ interfaces:
     all_opened: Всі відкриті
     accordion_mode: Режим акордеон
     max_one_section_open: Максимальна кількість відкритих секцій – 1
+  group-tabs:
+    fill_width: Ширина заповнення
   presentation-links:
     presentation-links: Кнопки
     description: Налаштовувані кнопки-посилання для відкриття динамічних URL або запуску Flow
@@ -2122,7 +2137,6 @@ interfaces:
     value_securely_saved: Значення надійно збережено
     generate: Генерувати токен
     regenerate: Оновити токен
-    generate_success_copy: Обов'язково створіть резервну копію та скопіюйте токен вище. З міркувань безпеки ви не зможете переглянути токен знову після збереження і перейти з цієї сторінки.
     remove_token: Видалити токен
   system-raw-editor:
     system-raw-editor: Редактор Raw
@@ -2609,3 +2623,4 @@ accepted: Схвалено
 text_direction_auto: Автоматично (відповідно до мови)
 text_direction_ltr: Зліва направо (LTR)
 text_direction_rtl: Справа наліво (RTL)
+set_to_now: Перемкнути на Зараз

@@ -122,6 +122,7 @@ describe('Integration Tests', () => {
 				[{}, 'collection name is missing'],
 				[{ collection: '' }, 'collection name is empty'],
 				[{ collection: 'directus_test' }, 'collection names start with "directus_"'],
+				[{ collection: 'Folder/Test' }, 'collection name contains "/"'],
 			];
 
 			test.each(invalidPayloads)('should throw InvalidPayloadError when %s', async (payload, _description) => {
@@ -147,6 +148,24 @@ describe('Integration Tests', () => {
 
 				expect(result).toBe('new_collection');
 				expect(mockSchemaBuilder.createTable).toHaveBeenCalledWith('new_collection', expect.any(Function));
+			});
+
+			test('should parse collection name before creating', async () => {
+				tracker.on.select('directus_collections').response([]);
+				const service = new CollectionsService({ knex: db, schema, accountability: null });
+
+				const parseCollectionNameSpy = vi
+					.spyOn(service.helpers.schema, 'parseCollectionName')
+					.mockResolvedValue('parsed_collection_name');
+
+				const result = await service.createOne({
+					collection: 'ORIGINAL_COLLECTION',
+					schema: {},
+				});
+
+				expect(parseCollectionNameSpy).toHaveBeenCalledWith('ORIGINAL_COLLECTION');
+				expect(result).toBe('parsed_collection_name');
+				expect(mockSchemaBuilder.createTable).toHaveBeenCalledWith('parsed_collection_name', expect.any(Function));
 			});
 
 			test('should create collection with meta only', async () => {

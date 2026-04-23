@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { isEmpty } from 'lodash';
-import { computed, ref, watch } from 'vue';
+import { computed, nextTick, ref, watch } from 'vue';
 import LanguageSelect from './language-select.vue';
 import VDivider from '@/components/v-divider.vue';
 import VForm from '@/components/v-form/v-form.vue';
@@ -68,6 +68,15 @@ const {
 	itemPrimaryKey,
 	itemNew,
 );
+
+// Unmount the form when fields or lang change to avoid WYSIWYG crashing while Vue manipulates the DOM.
+const formReady = ref(true);
+
+watch([fields, lang], async () => {
+	formReady.value = false;
+	await nextTick();
+	formReady.value = true;
+});
 
 const activatorDisabled = computed(() => {
 	return (
@@ -143,7 +152,7 @@ function onToggleDelete(item: DisplayItem, itemInitial?: DisplayItem) {
 			:items="languageOptions"
 			:danger="item?.$type === 'deleted'"
 			:secondary
-			:disabled="activatorDisabled"
+			:disabled="disabled"
 			:non-editable
 		>
 			<template #prepend>
@@ -190,7 +199,7 @@ function onToggleDelete(item: DisplayItem, itemInitial?: DisplayItem) {
 		</LanguageSelect>
 
 		<VForm
-			v-if="selectedLanguage"
+			v-if="selectedLanguage && formReady"
 			:key="selectedLanguage.value"
 			:primary-key="itemPrimaryKey ?? '+'"
 			:class="{ unselected: !item, disabled }"
@@ -213,7 +222,7 @@ function onToggleDelete(item: DisplayItem, itemInitial?: DisplayItem) {
 
 <style lang="scss" scoped>
 .activator-loading-placeholder {
-	--size: 24px;
+	--size: 1.375rem;
 
 	display: inline-block;
 	inline-size: var(--size);
@@ -225,11 +234,11 @@ function onToggleDelete(item: DisplayItem, itemInitial?: DisplayItem) {
 }
 
 .v-form {
-	--theme--form--row-gap: 32px;
+	--theme--form--row-gap: 1.8125rem;
 	--v-chip-color: var(--theme--primary);
 	--v-chip-background-color: var(--theme--primary-background);
 
-	margin-block-start: 32px;
+	margin-block-start: 1.8125rem;
 
 	&.unselected:not(.disabled) {
 		opacity: 0.5;

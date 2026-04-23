@@ -4,6 +4,7 @@ import { PrimaryKey, Share } from '@directus/types';
 import { abbreviateNumber } from '@directus/utils';
 import { computed, onMounted, ref, Ref, toRefs, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useSidebarStore } from '../private-view/stores/sidebar';
 import ShareItem from './share-item.vue';
 import SidebarDetail from './sidebar-detail.vue';
 import api from '@/api';
@@ -39,6 +40,8 @@ const { active: open } = useGroupable({
 	group: 'sidebar-detail',
 });
 
+const sidebarStore = useSidebarStore();
+
 const { copyToClipboard } = useClipboard();
 
 const {
@@ -65,7 +68,10 @@ const {
 
 onMounted(() => {
 	getSharesCount();
-	if (open.value) getShares();
+
+	if (open.value || sidebarStore.activeAccordionItem === 'shares') {
+		getShares();
+	}
 });
 
 function onToggle(open: boolean) {
@@ -88,7 +94,7 @@ function useShares(collection: Ref<string>, primaryKey: Ref<PrimaryKey>) {
 	watch([collection, primaryKey], () => refresh());
 
 	const sendPublicLink = computed(() => {
-		if (!shareToSend.value) return null;
+		if (!shareToSend.value) return undefined;
 		return window.location.origin + getRootPath() + 'admin/shared/' + shareToSend.value.id;
 	});
 
@@ -270,7 +276,7 @@ async function copy(id: string) {
 		id="shares"
 		:title
 		icon="share"
-		:badge="!loadingCount && sharesCount > 0 ? abbreviateNumber(sharesCount) : null"
+		:badge="!loadingCount && sharesCount > 0 ? abbreviateNumber(sharesCount) : undefined"
 		@toggle="onToggle"
 	>
 		<VNotice v-if="error" type="danger">{{ $t('unexpected_error') }}</VNotice>
@@ -361,28 +367,28 @@ async function copy(id: string) {
 @use '@/styles/mixins';
 
 .v-progress-linear {
-	margin: 24px 0;
+	margin: 1.375rem 0;
 }
 
 .v-divider {
 	position: sticky;
 	inset-block-start: 0;
 	z-index: 2;
-	margin-block: 8px;
-	padding-block: 8px;
+	margin-block: 0.4375rem;
+	padding-block: 0.4375rem;
 	background-color: var(--theme--background-normal);
 	box-shadow: 0 0 4px 2px var(--theme--background-normal);
 }
 
 .empty {
-	margin-block: 16px;
-	margin-inline-start: 2px;
+	margin-block: 0.875rem;
+	margin-inline-start: 0.125rem;
 	color: var(--theme--foreground-subdued);
 	font-style: italic;
 }
 
 .grid {
-	--theme--form--row-gap: 20px;
+	--theme--form--row-gap: 1.125rem;
 
 	@include mixins.form-grid;
 }

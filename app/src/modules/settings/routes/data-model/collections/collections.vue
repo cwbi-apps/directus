@@ -178,7 +178,7 @@ async function downloadSnapshot() {
 
 			<PrivateViewHeaderBarActionButton
 				v-tooltip.bottom="$t('create_collection')"
-				to="/settings/data-model/+"
+				:to="{ name: 'settings-add-new' }"
 				icon="add"
 			/>
 		</template>
@@ -192,7 +192,7 @@ async function downloadSnapshot() {
 				{{ $t('no_collections_copy_admin') }}
 
 				<template #append>
-					<VButton to="/settings/data-model/+">{{ $t('create_collection') }}</VButton>
+					<VButton :to="{ name: 'settings-add-new' }">{{ $t('create_collection') }}</VButton>
 				</template>
 			</VInfo>
 
@@ -245,7 +245,10 @@ async function downloadSnapshot() {
 						<VIcon name="add" />
 					</VListItemIcon>
 
-					<RouterLink class="collection-name" :to="`/settings/data-model/${collection.collection}`">
+					<RouterLink
+						class="collection-name"
+						:to="{ name: 'settings-fields', params: { collection: collection.collection } }"
+					>
 						<VIcon class="collection-icon" name="dns" />
 						<span class="collection-name">{{ collection.name }}</span>
 					</RouterLink>
@@ -299,7 +302,7 @@ async function downloadSnapshot() {
 }
 
 .root-drag-container {
-	padding: 8px 0;
+	padding: 0.4375rem 0;
 	overflow: hidden;
 }
 
@@ -315,7 +318,7 @@ async function downloadSnapshot() {
 }
 
 .collection-icon {
-	margin-inline-end: 8px;
+	margin-inline-end: 0.4375rem;
 }
 
 .hidden .collection-name {
@@ -337,11 +340,11 @@ async function downloadSnapshot() {
 }
 
 .db-only {
-	margin-block-end: 16px;
+	margin-block-end: 0.875rem;
 }
 
 .expand-collapse-button {
-	padding-block: 4px 8px;
+	padding-block: 0.25rem 0.4375rem;
 	text-align: end;
 	color: var(--theme--foreground-subdued);
 
@@ -361,6 +364,6 @@ async function downloadSnapshot() {
 }
 
 .snapshot-download {
-	margin-block-start: 12px;
+	margin-block-start: 0.6875rem;
 }
 </style>

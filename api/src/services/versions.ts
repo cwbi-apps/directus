@@ -9,6 +9,7 @@ import type {
 	Query,
 	QueryOptions,
 } from '@directus/types';
+import { deepMapWithSchema } from '@directus/utils';
 import Joi from 'joi';
 import { assign, get, isEqual, isPlainObject, pick } from 'lodash-es';
 import objectHash from 'object-hash';
@@ -17,7 +18,6 @@ import { getHelpers } from '../database/helpers/index.js';
 import emitter from '../emitter.js';
 import { validateAccess } from '../permissions/modules/validate-access/validate-access.js';
 import { shouldClearCache } from '../utils/should-clear-cache.js';
-import { deepMapWithSchema } from '../utils/versioning/deep-map-with-schema.js';
 import { splitRecursive } from '../utils/versioning/split-recursive.js';
 import { ActivityService } from './activity.js';
 import { ItemsService } from './items.js';
@@ -226,42 +226,48 @@ export class VersionsService extends ItemsService<ContentVersion> {
 			schema: this.schema,
 		});
 
-		const activityService = new ActivityService({
-			knex: this.knex,
-			schema: this.schema,
-		});
-
-		const revisionsService = new RevisionsService({
-			knex: this.knex,
-			schema: this.schema,
-		});
-
 		const { item, collection, delta: existingDelta } = version;
-
-		const activity = await activityService.createOne({
-			action: Action.VERSION_SAVE,
-			user: this.accountability?.user ?? null,
-			collection,
-			ip: this.accountability?.ip ?? null,
-			user_agent: this.accountability?.userAgent ?? null,
-			origin: this.accountability?.origin ?? null,
-			item,
-		});
 
 		const helpers = getHelpers(this.knex);
 
 		let revisionDelta = await payloadService.prepareDelta(delta);
 
-		await revisionsService.createOne({
-			activity,
-			version: key,
-			collection,
-			item,
-			data: revisionDelta,
-			delta: revisionDelta,
-		});
+		const trackingAccountability = this.schema.collections[collection]?.accountability ?? null;
 
-		revisionDelta = revisionDelta ? JSON.parse(revisionDelta) : null;
+		if (trackingAccountability !== null) {
+			const activityService = new ActivityService({
+				knex: this.knex,
+				schema: this.schema,
+			});
+
+			const activity = await activityService.createOne({
+				action: Action.VERSION_SAVE,
+				user: this.accountability?.user ?? null,
+				collection,
+				ip: this.accountability?.ip ?? null,
+				user_agent: this.accountability?.userAgent ?? null,
+				origin: this.accountability?.origin ?? null,
+				item,
+			});
+
+			if (trackingAccountability === 'all') {
+				const revisionsService = new RevisionsService({
+					knex: this.knex,
+					schema: this.schema,
+				});
+
+				await revisionsService.createOne({
+					activity,
+					version: key,
+					collection,
+					item,
+					data: revisionDelta,
+					delta: revisionDelta,
+				});
+			}
+		}
+
+		revisionDelta = revisionDelta ? revisionDelta : null;
 
 		const date = new Date(helpers.date.writeTimestamp(new Date().toISOString()));
 

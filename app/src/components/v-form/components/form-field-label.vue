@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import type { Field } from '@directus/types';
 import { computed } from 'vue';
-import { useI18n } from 'vue-i18n';
 import type { ComparisonContext, FormField } from '../types';
 import VCheckbox from '@/components/v-checkbox.vue';
 import VChip from '@/components/v-chip.vue';
 import VIcon from '@/components/v-icon/v-icon.vue';
 import VTextOverflow from '@/components/v-text-overflow.vue';
-import { isDateUpdated, isUserUpdated } from '@/utils/field-utils';
+import { CollabUser } from '@/composables/use-collab';
+import CollabIndicatorField from '@/views/private/components/collab/CollabIndicatorField.vue';
 
 const props = withDefaults(
 	defineProps<{
@@ -26,6 +25,7 @@ const props = withDefaults(
 		disabledMenu?: boolean;
 		comparison?: ComparisonContext;
 		comparisonActive?: boolean;
+		focusedBy?: CollabUser;
 	}>(),
 	{
 		batchMode: false,
@@ -44,20 +44,16 @@ const props = withDefaults(
 
 defineEmits(['toggle-batch', 'toggle-raw']);
 
-const { t } = useI18n();
-
 const showHiddenIndicator = computed(
 	() =>
 		(props.comparison?.fields?.has(props.field.field) || props.comparison?.revisionFields?.has(props.field.field)) &&
 		props.field.meta?.hidden,
 );
 
-function getUpdatedInRevisionTooltip(isDifferentFromLatest: boolean) {
-	const isAutoUpdatedField = isDateUpdated(props.field as Field) || isUserUpdated(props.field as Field);
-
-	if (isDifferentFromLatest || isAutoUpdatedField) return t('updated_in_revision');
-	return t('updated_in_revision_matches_latest');
-}
+const isPromotableField = computed(() => {
+	if (!props.comparison) return false;
+	return props.comparison.onToggleField !== null && props.comparison.fields.has(props.field.field);
+});
 </script>
 
 <template>
@@ -76,11 +72,11 @@ function getUpdatedInRevisionTooltip(isDifferentFromLatest: boolean) {
 			/>
 
 			<VCheckbox
-				v-if="comparison?.side === 'incoming' && comparison.fields.has(field.field)"
+				v-if="isPromotableField"
 				class="comparison-checkbox"
 				:model-value="comparisonActive"
 				:value="field.field"
-				@update:model-value="comparison.onToggleField(field.field)"
+				@update:model-value="comparison!.onToggleField?.(field.field)"
 			/>
 
 			<div class="field-label-content">
@@ -110,19 +106,13 @@ function getUpdatedInRevisionTooltip(isDifferentFromLatest: boolean) {
 					clickable
 					@click.stop="$emit('toggle-raw', !rawEditorActive)"
 				/>
-
-				<VChip
-					v-if="comparison?.side === 'incoming' && comparison.revisionFields?.has(field.field)"
-					v-tooltip="getUpdatedInRevisionTooltip(comparison.fields.has(field.field))"
-					class="updated-badge"
-					x-small
-					:label="false"
-				>
-					{{ $t('updated') }}
-				</VChip>
 			</div>
 
 			<VIcon v-if="!disabled && !disabledMenu" class="ctx-arrow" :class="{ active }" name="arrow_drop_down" />
+
+			<span class="spacer" />
+
+			<CollabIndicatorField :model-value="focusedBy" class="avatars" />
 		</component>
 	</div>
 </template>
@@ -131,14 +121,14 @@ function getUpdatedInRevisionTooltip(isDifferentFromLatest: boolean) {
 .field-label {
 	position: relative;
 	display: flex;
-	margin-block-end: 8px;
+	margin-block-end: 0.4375rem;
 	color: var(--theme--form--field--label--foreground);
 
 	.v-text-overflow {
 		display: inline;
 		white-space: normal;
 
-		@media (min-width: 960px) {
+		@media (width >= 54rem) {
 			display: initial;
 			white-space: nowrap;
 		}
@@ -149,8 +139,8 @@ function getUpdatedInRevisionTooltip(isDifferentFromLatest: boolean) {
 	}
 
 	.v-checkbox {
-		block-size: 18px; // Don't push down label with normal icon height (24px)
-		margin-inline-end: 4px;
+		block-size: 1rem; // Don't push down label with normal icon height (1.375rem)
+		margin-inline-end: 0.25rem;
 		display: inline-flex;
 		align-self: baseline;
 	}
@@ -158,7 +148,7 @@ function getUpdatedInRevisionTooltip(isDifferentFromLatest: boolean) {
 	.v-checkbox.comparison-checkbox {
 		--v-checkbox-color: var(--theme--success);
 
-		margin-inline-end: 8px;
+		margin-inline-end: 0.4375rem;
 
 		:deep(.checkbox) {
 			&:hover {
@@ -170,7 +160,7 @@ function getUpdatedInRevisionTooltip(isDifferentFromLatest: boolean) {
 	.field-label-content {
 		display: inline;
 
-		@media (min-width: 960px) {
+		@media (width >= 54rem) {
 			display: contents;
 		}
 	}
@@ -178,21 +168,21 @@ function getUpdatedInRevisionTooltip(isDifferentFromLatest: boolean) {
 	.badge {
 		margin: 0;
 		flex-shrink: 0;
-		margin-inline-start: 3px;
+		margin-inline-start: 0.1875rem;
 	}
 
 	.required {
 		--v-icon-color: var(--theme--primary);
 
-		margin-inline-start: 3px;
+		margin-inline-start: 0.1875rem;
 
 		&.has-badge {
-			margin-inline-end: 6px;
+			margin-inline-end: 0.3125rem;
 		}
 	}
 
 	.ctx-arrow {
-		margin-block-start: -3px;
+		margin-block-start: -0.1875rem;
 		color: var(--theme--foreground-subdued);
 		opacity: 0;
 		transition: opacity var(--fast) var(--transition);
@@ -218,10 +208,10 @@ function getUpdatedInRevisionTooltip(isDifferentFromLatest: boolean) {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		block-size: 24px;
-		inline-size: 24px;
-		margin-block-start: -2px;
-		margin-inline-start: 5px;
+		block-size: 1.375rem;
+		inline-size: 1.375rem;
+		margin-block-start: -0.125rem;
+		margin-inline-start: 0.3125rem;
 		color: var(--theme--foreground-subdued);
 		transition: color var(--fast) var(--transition);
 
@@ -236,34 +226,22 @@ function getUpdatedInRevisionTooltip(isDifferentFromLatest: boolean) {
 		}
 	}
 
-	.updated-badge {
-		--v-chip-background-color: var(--theme--success-background);
-		--v-chip-color: var(--theme--success-accent);
-
-		flex-shrink: 0;
-		margin-inline-start: 6px;
-	}
-
 	&.edited {
 		.edit-dot {
 			position: absolute;
-			inset-block-start: 7px;
-			inset-inline-start: -7px;
+			inset-block-start: 0.375rem;
+			inset-inline-start: -0.375rem;
 			display: block;
-			inline-size: 4px;
-			block-size: 4px;
+			inline-size: 0.25rem;
+			block-size: 0.25rem;
 			background-color: var(--theme--foreground-subdued);
-			border-radius: 4px;
+			border-radius: 0.25rem;
 			content: '';
-		}
-
-		.field-name {
-			margin-inline-start: -16px;
-			padding-inline-start: 16px;
 		}
 	}
 
 	.field-name {
+		flex-grow: 1;
 		max-inline-size: 100%;
 		text-align: start;
 		display: flex;
@@ -273,5 +251,15 @@ function getUpdatedInRevisionTooltip(isDifferentFromLatest: boolean) {
 
 .type-label {
 	font-family: var(--theme--form--field--label--font-family);
+}
+
+.spacer {
+	flex-grow: 1;
+}
+
+.avatars {
+	margin-block-start: -0.1875rem;
+	align-self: start;
+	flex-shrink: 0;
 }
 </style>

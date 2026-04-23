@@ -52,4 +52,11 @@ TODO
 /tests/blackbox/sequencer-data.json
 /packages/extensions-sdk/temp-extension-*/
 
+# AI
+.claude/*
+!.claude/CLAUDE.md
+!.claude/settings.json
+!.claude/hooks/
+!.claude/skills/
+.devtools/
 build-with-new.ps1

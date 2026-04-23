@@ -320,6 +320,7 @@ related_collection: सम्बन्धित संग्रह
 related_collections: सम्बन्धित संग्रहहरू
 translations_collection: अनुवाद संग्रह
 languages_collection: भाषा संग्रह
+translations_preview_collections: सङ्ग्रहहरू
 import_data_input_placeholder: CSV वा JSON...
 import_data_button: आयात सुरु गर्नुहोस्
 import_data_indeterminate: डाटा आयात गर्दै...
@@ -466,7 +467,6 @@ no_collections: कुनै सङ्ग्रहहरू छैनन्
 create_collection: ' सङ्ग्रह बनाउनुहोस्'
 no_collections_copy_admin: तपाईंसँग अहिलेसम्म कुनै पनि सङ्ग्रहहरू छैनन्। सुरु गर्न तलको बटन क्लिक गर्नुहोस्।
 no_collections_copy: तपाईंसँग अहिलेसम्म कुनै पनि सङ्ग्रहहरू छैनन्। कृपया आफ्नो प्रणाली प्रशासकलाई सम्पर्क गर्नुहोस्।
-relationship_not_setup: सम्बन्ध सही तरिकाले कन्फिगर गरिएको छैन
 display_template_not_setup: डिस्प्ले टेम्प्लेट विकल्प गलत कन्फिगर गरिएको छ
 collection_field_not_setup: संग्रह फिल्ड विकल्प गलत कन्फिगर गरिएको छ
 select_a_collection: एउटा सङ्ग्रह चयन गर्नुहोस्
@@ -570,7 +570,6 @@ unexpected_error: नसाेचेकाे समस्या
 copy_details: विवरणहरू प्रतिलिपि गर्नुहोस्
 no_app_access: कुनै एप पहुँच छैन
 no_app_access_copy: यो प्रयोगकर्तालाई प्रशासक एप प्रयोग गर्न अनुमति छैन।
-password_reset_sent: यदि तपाइँसँग खाता छ भने, हामीले तपाइँलाई तपाइँको पासवर्ड रिसेट गर्न सुरक्षित लिङ्क पठाएका छौं
 password_reset_successful: पासवर्ड सफलतापूर्वक रिसेट गरियो
 back: पछाडि
 filter: फिल्‍टर
@@ -753,6 +752,14 @@ operation_key_unique_error: अपरेशन कुञ्जीहरू फ�
 operation_handle_resolve: 'समाधान गर्नुहोस्: थप्न क्लिक गर्नुहोस् वा पुन: मार्गमा तान्नुहोस्'
 operation_handle_reject: 'अस्वीकार गर्नुहोस्: थप्न क्लिक गर्नुहोस् वा रिरूटमा तान्नुहोस्'
 insights: अन्तर्दृष्टि
+deployment:
+  provider:
+    settings:
+      delete_confirm: यो कार्य स्थायी छ र पूर्ववत गर्न सकिँदैन। के तपाइँ निश्चित रूपमा अगाडि बढ्न चाहनुहुन्छ?
+    run:
+      cancel_confirm: यो कार्य स्थायी छ र पूर्ववत गर्न सकिँदैन। के तपाइँ निश्चित रूपमा अगाडि बढ्न चाहनुहुन्छ?
+  target_value:
+    preview: पूर्वावलोकन
 dashboard: ड्यासबोर्ड
 panel: प्‍यानल
 panel_options: प्यानल विकल्पहरू
@@ -1035,6 +1042,7 @@ fields:
     transformations_none: रूपान्तरण असक्षम गर्नुहोस्
     transformations_presets: तलका प्रिसेटहरूमा रूपान्तरणहरू सीमित गर्नुहोस्
     image_editor: तस्वीर सम्पादक
+    ai_header_name: हेडर
   directus_shares:
     name: नाम
     role: भूमिका
@@ -1148,9 +1156,13 @@ no_shares: "देखाउनको लागि कुनै साझेद�
 new_share: नयाँ साझेदारी
 ai:
   input: इनपुट
+  items: बस्तुहरु
+  content: सामग्री
   settings: सेटिंग्सहरु
   tool_approval:
     disabled: सक्षम गरिएको छैन
+  ask_user_submit: पेश गर्नुहोस्
+  ask_user_next: अर्को
 ai_tools:
   items: बस्तुहरु
   files: फाइलहरू
@@ -1285,6 +1297,8 @@ interfaces:
     start: सुरु
     all_closed: "सबै बन्द छ\n"
     all_opened: सबै खुल्यो
+  group-tabs:
+    fill_width: पूर्ण चौडाइ
   presentation-links:
     presentation-links: बटनहरू
     style: शैली
@@ -1486,7 +1500,6 @@ interfaces:
     value_securely_saved: मान सुरक्षित रूपमा बचत गरियो
     generate: टोकन उत्पन्न गर्नुहोस्
     regenerate: 'टोकन पुन: उत्पन्न गर्नुहोस्'
-    generate_success_copy: माथिको टोकन ब्याकअप र प्रतिलिपि गर्नुहोस्। सुरक्षा कारणहरूका लागि, तपाईंले यो पृष्ठ बचत गरियो र हेरिसकेपछि फेरि टोकन हेर्न सक्षम हुनुहुने छैन।
     remove_token: टोकन हटाउनुहोस्
   system-raw-editor:
     description: "raw वा mustache टेम्प्लेटिंग मानहरू प्रविष्ट गर्न अनुमति दिनुहोस्\n"

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useCollection } from '@directus/composables';
+import { useShortcut } from '@directus/composables';
 import { computed, ref, toRefs, unref } from 'vue';
 import { useRouter } from 'vue-router';
 import SettingsNavigation from '../../components/navigation.vue';
@@ -14,7 +15,6 @@ import VDialog from '@/components/v-dialog.vue';
 import VForm from '@/components/v-form/v-form.vue';
 import { useEditsGuard } from '@/composables/use-edits-guard';
 import { useItem } from '@/composables/use-item';
-import { useShortcut } from '@/composables/use-shortcut';
 import { refreshCurrentLanguage } from '@/lang/refresh-current-language';
 import { PrivateViewHeaderBarActionButton } from '@/views/private';
 import { PrivateView } from '@/views/private';
@@ -122,7 +122,7 @@ async function saveAndQuit() {
 	try {
 		await save();
 		await refreshCurrentLanguage();
-		router.push(`/settings/translations`);
+		router.push({ name: 'settings-translations-collection' });
 	} catch {
 		// Save shows unexpected error dialog
 	}
@@ -139,7 +139,7 @@ async function saveAndStay() {
 
 		if (props.primaryKey === '+') {
 			const newPrimaryKey = savedItem[primaryKeyField.value!.field];
-			router.replace(`/settings/translations/${encodeURIComponent(newPrimaryKey)}`);
+			router.replace({ name: 'settings-translations-item', params: { primaryKey: encodeURIComponent(newPrimaryKey) } });
 		}
 	} catch {
 		// Save shows unexpected error dialog
@@ -156,7 +156,7 @@ async function saveAndAddNew() {
 		if (isNew.value === true) {
 			refresh();
 		} else {
-			router.push(`/settings/translations/+`);
+			router.push({ name: 'settings-translations-item', params: { primaryKey: '+' } });
 		}
 	} catch {
 		// Save shows unexpected error dialog
@@ -166,7 +166,8 @@ async function saveAndAddNew() {
 async function saveAsCopyAndNavigate() {
 	try {
 		const newPrimaryKey = await saveAsCopy();
-		if (newPrimaryKey) router.replace(`/settings/translations/${encodeURIComponent(newPrimaryKey)}`);
+		if (newPrimaryKey)
+			router.replace({ name: 'settings-translations-item', params: { primaryKey: encodeURIComponent(newPrimaryKey) } });
 	} catch {
 		// Save shows unexpected error dialog
 	}
@@ -180,7 +181,7 @@ async function deleteAndQuit() {
 		await refreshCurrentLanguage();
 
 		edits.value = {};
-		router.replace(`/settings/translations`);
+		router.replace({ name: 'settings-translations-collection' });
 	} catch {
 		// `remove` will show the unexpected error dialog
 	}
@@ -318,6 +319,8 @@ async function revert(values: Record<string, any>) {
 </template>
 
 <style lang="scss" scoped>
+@use '@/styles/mixins';
+
 .action-delete {
 	--v-button-background-color-hover: var(--theme--danger) !important;
 	--v-button-color-hover: var(--white) !important;
@@ -333,13 +336,13 @@ async function revert(values: Record<string, any>) {
 	padding: calc(var(--content-padding) * 3) var(--content-padding) var(--content-padding);
 	padding-block-end: var(--content-padding-bottom);
 
-	@media (width > 640px) {
+	@include mixins.breakpoint-up('sm') {
 		padding: var(--content-padding);
 		padding-block-end: var(--content-padding-bottom);
 	}
 }
 
 .title-loader {
-	inline-size: 260px;
+	inline-size: 14.625rem;
 }
 </style>

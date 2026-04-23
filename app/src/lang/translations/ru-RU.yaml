@@ -20,11 +20,21 @@
 #'SIMD', 'ArrayBuffer', 'DataView', 'JSON', 'Promise', 'Generator', 'GeneratorFunction', 'Reflect',
 #'Proxy', 'Intl'
 about: О программе
+directus_bsl: Directus BSL 1.1
 privacy_policy: Политика конфиденциальности
-contact_our_team: Связаться с нашей командой
+contact_our_team: Связаться с нами
 setup_welcome: Добро пожаловать в Directus
 setup_info: Давайте создадим учетную запись администратора и запустим ваш проект.
+setup_license_notice: >
+  Directus бесплатный для организаций с годовым доходом, финансированием или бюджетом менее 5 миллионов долларов.
+setup_license_follow_up: >
+  Лица выше данного предела обязаны получить платную лицензию. Теперь вы можете продолжить анализ Directus и {contactOurTeam}, когда вы готовы обсудить использование продукции.
+setup_save_accept_license: >
+  Нажав сохранить, вы принимаете условия [{directusBsl} и {privacyPolicy}.
+setup_accept_license: Я принимаю условия {directusBsl} и {privacyPolicy}
+setup_marketing_emails: Присылать мне обновления и заметки к выпуску
 setup_launch: Запустить Directus
+setup_project: Организовать проект
 first_name: Имя
 last_name: Фамилия
 admin_email: Почта админа
@@ -32,6 +42,9 @@ owner_email: Почта владельца
 email_address: Адрес электронной почты
 organization_name: Название организации
 how_do_you_use_directus: Для чего вы используете Directus?
+usage_personal: Личный/Обучение
+usage_commercial: Бизнес / Коммерческое
+usage_community: Исходный код / Сообщество
 identifier: Индентификатор
 avatar: Аватар
 application: Приложение
@@ -59,11 +72,17 @@ collection_names_are_case_sensitive: Названия коллекций чув�
 condition_rules: Правила условий
 input: Ввод текста
 invalid_input: Некорректное значение
+invalid_file_type: Недопустимый тип файла
 not_a_number: Не число
+invalid_range_max: Значение превышает максимальный размер {value}
 maps: Карты
 switch_user: Сменить пользователя
+item_deleted: Предмет, который вы редактировали, был удален.
 item_creation: Создание элемента
 item_revision: Редакция элемента
+previous_revision: Предыдущая версия
+latest_revision: Последняя версия
+comparing_to: Сравнивая с
 enter_a_name: Введите название...
 duplicate_field: Дублировать поле
 half_width: Полширины
@@ -71,6 +90,9 @@ full_width: Полная ширина
 group: Группа
 popular: Популярное
 recent: Недавнее
+previous: Предыдущий
+latest: Последние
+updated: Обновлено
 export_items: Экспорт элементов
 and: и
 or: или
@@ -115,6 +137,9 @@ report_an_issue: Сообщить об ошибке
 website: Веб-сайт
 github: GitHub
 beta: Бета
+collab_collision: Этот элемент был изменен во время редактирования. Выберите какие изменения оставить.
+collab_editing_field: Редактирование поля “{field}”
+you: вы
 n_downloads: '{n} загрузок'
 downloads: Загрузки
 compatibility_not_guaranteed: Совместимость не гарантирована
@@ -171,6 +196,7 @@ connection_good: Хорошее соединение
 connection_fair: Сносное соединение
 connection_poor: Плохое соединение
 primary: Первичный
+download_folder: Папка загрузок
 rename_folder: Переименовать папку
 delete_folder: Удалить папку
 prefix: Префикс
@@ -180,6 +206,7 @@ version: Версия
 version_key: Ключ Версии
 version_name: Название Версии
 main_version: Основная
+your_version: Ваша версия
 switch_version: Сменить Версию
 switch_version_copy: Вы уверены, что хотите переключиться на версию "{version}"? Несохраненные изменения будут потеряны.
 create_version: Создать Версию
@@ -188,6 +215,7 @@ compare_version: Сравнить Версии
 save_version: Сохранить Версию
 promote_version: Повысить версию
 apply: Применить
+select_all_differences: Выбрать все различия
 delete_version: Удалить версию
 delete_version_copy: >-
   Вы уверены, что хотите удалить версию «{version}»? Это действие нельзя отменить.
@@ -251,6 +279,7 @@ validationError:
   iends_with: Значение должно заканчиваться на "{substring}"
   nends_with: Значение не может заканчиваться на "{substring}"
   niends_with: Значение не может заканчиваться на "{substring}"
+  confirm_password: Пароли не совпадают
 all_access: Полный доступ
 no_access: Без доступа
 use_custom: Настраиваемый
@@ -493,11 +522,16 @@ related_collection: Связанная коллекция
 related_collections: Связанные коллекции
 translations_collection: Коллекция переводов
 languages_collection: Коллекция языков
+translations_preview_collections: Коллекции
+translations_preview_fields: Поля
 import_data_input_placeholder: CSV или JSON...
 import_data_button: Начать импорт
 import_data_indeterminate: Импорт данных...
 import_data_success: Данные успешно импортированы из {filename}
+import_data_errors: Ошибка импорта
 import_data_error: Структура данных этого файла не соответствует коллекции.
+snapshot:
+  export: Экспорт схемы
 label_import: Импорт
 label_export: Экспорт
 import_export: Импорт / Экспорт
@@ -671,7 +705,6 @@ no_collections: Нет коллекций
 create_collection: Создать коллекцию
 no_collections_copy_admin: У вас пока нет коллекций. Нажмите кнопку ниже, чтобы начать.
 no_collections_copy: У вас пока нет коллекций. Пожалуйста, обратитесь к системному администратору.
-relationship_not_setup: Отношение не было настроено правильно
 no_singleton_relations: Связи с одиночными объектами не поддерживаются
 display_template_not_setup: Опция шаблона отображения настроена неправильно
 collection_field_not_setup: Опция поля коллекции настроена неправильно
@@ -754,6 +787,7 @@ errors:
   INVALID_OTP: Неверный одноразовый пароль
   INVALID_PAYLOAD: Недействительное содержимое
   INVALID_PROVIDER: Пользователь принадлежит другому провайдеру аутентификации
+  INVALID_PROVIDER_CONFIG: Неверная конфигурация провайдера
   INVALID_QUERY: Недействительный запрос
   INVALID_TOKEN: Недействительный токен
   INVALID_USER: Не удалось аутентифицировать пользователя
@@ -791,7 +825,6 @@ unexpected_error_copy: Произошла непредвиденная ошиб�
 copy_details: Скопировать подробности
 no_app_access: Нет доступа к приложению
 no_app_access_copy: Этому пользователю не разрешено использовать приложение администратора.
-password_reset_sent: Если у вас есть учётная запись, мы отправили вам безопасную ссылку для восстановления пароля
 password_reset_successful: Пароль успешно сброшен
 back: Назад
 filter: Фильтр
@@ -951,6 +984,7 @@ label: Описание
 flows: Процессы
 flow: Процесс
 select_a_flow: Выберите процесс
+run_flow_anyway: Запустить Flow всё равно
 run_flow_on_current_collection: Запустить процесс с текущей коллекцией
 run_flow_on_current: Запустить процесс с текущим элементом
 run_flow_on_selected: Сначала выберите один или несколько элементов | Запустить процесс с выбранным элементом | Запустить процесс с {n} выбранными элементами
@@ -1000,6 +1034,40 @@ no_url_copy: Пожалуйста, добавьте URL в настройках.
 invalid_url: Недопустимый URL
 invalid_url_copy: Указанный URL не совпадает ни с одним URL, указанным в настройках.
 insights: Аналитика
+deployment:
+  overview:
+    overview: Обзор
+    providers: Провайдеры
+    configure: Конфигурировать
+  provider:
+    token:
+      label: Личный ключ доступа
+      placeholder: Введите ваш ключ доступа...
+    settings:
+      edit_configuration: Редактирование конфигурации
+      delete_confirm: Это действие является необратимым и не может быть отменено. Вы уверены, что хотите продолжить?
+    vercel:
+      name: Верцель
+      team_id:
+        label: ID команды
+    projects: Проекты
+    select_projects: Выбрать Проекты
+    runs:
+      started: Запущено
+      author: Автор
+      refresh: Обновить
+      empty: Нет запущенных приложений
+    run:
+      cancel_confirm: Это действие является необратимым и не может быть отменено. Вы уверены, что хотите продолжить?
+      log_all: Все уровни ведения журнала
+      open_deployment: Перейти
+  no_projects: Нет проектов
+  no_projects_copy: Для этого поставщика не выбрано ни одного проекта.
+  no_runs: Нет запущенных приложений
+  target_value:
+    preview: Предпросмотр
+  runs_status:
+    ready: Готово
 dashboard: Доска
 panel: Панель
 panel_options: Параметры панели
@@ -1135,6 +1203,7 @@ appearance_dark: Темный
 other: Другой...
 adding_user: Добавление пользователя
 unknown_user: Неизвестный пользователь
+unknown_version: Неизвестная версия
 creating_in: 'Создание элемента в {collection}'
 editing_in: 'Редактирование элемента в {collection}'
 viewing_in: 'Просмотр элемента в {collection}'
@@ -1149,6 +1218,7 @@ settings_project: Настройки
 settings_appearance: Внешний вид
 settings_ai: ИИ
 model_context_protocol: Model Context Protocol
+ai_assistant: ИИ помощник
 settings_flows: Процессы
 settings_system_logs: Системные логи
 settings_presets: Закладки
@@ -1380,6 +1450,7 @@ fields:
     mcp_notice: 'Model Context Protocol — это стандарт для подключения LLM к таким приложениям, как Directus. Единожды настроенный, Directus MCP сервер будет доступен по `/mcp`. <a href="https://directus.io/docs/guides/ai/mcp" target="_blank">Узнать больше про MCP и его установку.</a>'
     mcp_allow_deletes: Разрешить удаления
     mcp_prompts_collection: AI Prompts Collection
+    ai_header_name: HTTP-заголовок
   directus_shares:
     name: Название
     role: Роль
@@ -1532,6 +1603,7 @@ live_preview:
   new_window: Открыть в новом окне
   close_window: Открыть в режиме разделённого экрана
   toggle_3d: Переключить 3D
+  display_options: Параметры отображения
 shares: Элементы Общего доступа
 unlimited_usage: Неограниченное использование
 uses_left: Не осталось использования | 1 использование осталось | осталось {n} использований
@@ -1540,9 +1612,13 @@ new_share: Новая публикация
 ai:
   input: Ввод
   unknown: Неизвестно
+  items: Элементы
+  content: Контент
   settings: Настройки
   tool_approval:
     disabled: Отключено
+  ask_user_submit: Отправить
+  ask_user_next: Дальше
 ai_tools:
   items: Элементы
   files: Файлы
@@ -1553,6 +1629,9 @@ ai_tools:
   schema: Схема
   collections: Коллекции
   fields: Поля
+mcp_prompts_collection:
+  generate_fields_dialog_title: Сгенерировать поля для AI запросов
+  validation_error_invalid: Коллекцию невозможно использовать
 mcp_prompts_collection_schema:
   messages_role_user: Пользователь
 expired: Истекло
@@ -1721,6 +1800,8 @@ interfaces:
     all_opened: Все открыты
     accordion_mode: Вид аккордеона
     max_one_section_open: 1 открытая секция
+  group-tabs:
+    fill_width: В ширину
   presentation-links:
     presentation-links: Кнопки
     style: Стиль
@@ -2036,8 +2117,7 @@ interfaces:
     value_securely_saved: Значение сохранено безопасным способом
     generate: Сгенерировать Токен
     regenerate: Перевыпустить Токен
-    generate_success_copy: Обязательно создайте резервную копию и скопируйте токен выше. Из соображений безопасности вы не сможете просмотреть токен снова после сохранения и перехода с этой страницы.
-    remove_token: Удалить Токен
+    remove_token: Удалить ключ доступа
   system-raw-editor:
     system-raw-editor: Редактор сырых данных
     description: Разрешить ввод простых или шаблонных значений без логики
@@ -2503,3 +2583,4 @@ percent: Процент
 show_password: Показать пароль
 hide_password: Скрыть пароль
 accepted: Принято
+set_to_now: Установить Сейчас

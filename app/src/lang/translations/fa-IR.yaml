@@ -72,11 +72,23 @@ collection_names_are_case_sensitive: نام مجموعه ها حساس به حر
 condition_rules: استایل شرطی
 input: ورودی
 invalid_input: ورودی نامعتبر
+invalid_file_type: نوع فایل نامعتبر
+invalid_files_selected: 'هیچ فایل نامعتبر | فایل نامعتبر انتخاب شده | {count} فایل نامعتبر انتخاب شده'
+files_wrong_type: 'فایل‌های {files} که انتظار می‌رفت نوع {expected} داشته باشند، انواع نامعتبری دارند.'
+files_are_empty: 'فایل‌های مقابل خالی هستند و امکان بارگزاری ندارند: {files}'
 not_a_number: نا عدد
+invalid_range_min: مقدار از حداقل {value} پایین‌تر است
+invalid_range_max: مقدار از حداکثر {value} تجاوز کرده
 maps: نقشه‌ها
 switch_user: تغییر کاربر
+item_deleted: موردی که داشتید ویرایش می‌کردید حذف شده است.
 item_creation: ساخت آیتم
 item_revision: نگارش‌های آیتم
+previous_revision: بازنگری قبلی
+latest_revision: آخرین بازنگری
+comparing_to: در حال مقایسه با
+compare_to_latest_to_restore: برای بررسی بازگردانی این نسخه، آن را با آخرین نسخه مقایسه کنید
+select_earlier_revision_to_restore: یک نسخه قدیمی‌تر را برای بازیابی انتخاب کنید
 enter_a_name: عنوانی را وارد نمایید...
 duplicate_field: فیلد تکراری
 half_width: نصف عرض
@@ -84,6 +96,7 @@ full_width: عرض کامل
 group: گروه
 popular: محبوب
 recent: اخیر
+previous: قبلی
 latest: آخرین
 updated: به‌روز شد
 export_items: خروجی گرفتن از موارد
@@ -130,6 +143,11 @@ report_an_issue: گزارش یک مشکل
 website: وب سایت
 github: گیت‌هاب
 beta: آزمایشی
+collab_collision: این مورد هنگامی که در حال ویرایش آن بودید تغییر کرد. انتخاب کنید که کدام تغییرات نگه داشته شود.
+collab_disconnected: ویرایش مشارکتی قطع شد
+collab_editing_field: در حال ویرایش فیلد «{field}»
+collab_currently_viewing: در حال مشاهده
+you: شما
 n_downloads: '{n} دانلود'
 downloads: دانلودها
 compatibility_not_guaranteed: سازگاری تضمین نشده
@@ -186,6 +204,7 @@ connection_good: کیفیت اتصال، خوب است
 connection_fair: کیفیت اتصال، قابل قبول است.
 connection_poor: کیفیت اتصال، ضعیف است
 primary: اصلی
+download_folder: دانلود پوشه
 rename_folder: تغییر نام پوشه
 delete_folder: حذف پوشه
 prefix: پيشوند
@@ -195,6 +214,7 @@ version: نسخه
 version_key: شماره نسخه
 version_name: نام نسخه
 main_version: اصلی
+your_version: نسخه شما
 switch_version: تغییر نسخه
 switch_version_copy: مطمئنید که می‌خواهید به نسخه «{version}» بروید؟ تغییرات ذخیره‌نشده از دست می‌رود.
 create_version: ایجاد نسخه
@@ -203,6 +223,7 @@ compare_version: مقایسه نسخه
 save_version: ذخیره‌سازی نسخه
 promote_version: ارتقای نسخه
 apply: اعمال
+discard: لغو
 select_all_differences: انتخاب همه تفاوت‌ها
 main_updated_notice: مورد اصلی از زمان ایجاد این نسخه به روز شده است.
 delete_version: حذف نسخه
@@ -243,6 +264,7 @@ unarchive: خارج کردن از بایگانی
 unarchive_confirm: آیا از خارج کردن این آیتم از بایگانی، اطمینان دارید؟
 nested_files_folders_will_be_moved: فایل‌ها و پوشه‌های زیرمجموعه به یک سطح بالاتر منتقل می‌شوند.
 validation_errors_notice: 'فیلدهای زیر مقادیر غیرقابل قبولی دارند:'
+validation_value_is_invalid: مقدار نامعتبر است
 validationError:
   eq: مقدار باید {valid} باشد
   neq: مقدار نمی‌تواند {invalid} باشد
@@ -498,8 +520,6 @@ revision_delta_reverted: بازگردانده شد
 revision_delta_update_message: این فیلد به روز شده است اما ارزش آن به دلایل امنیتی پنهان شده است.
 revision_delta_other: نسخه
 revision_delta_by: 'در {date} توسط {user}'
-updated_in_revision: در این بازنگری به‌روز شده
-updated_in_revision_matches_latest: در این بازنگری به‌روز شده اما با نسخه آخر منطبق است
 differences_count: 'بدون تفاوت | ۱ تفاوت | {count} تفاوت'
 presentation_text_values_cannot_be_reimported: 'از متن ارائه استفاده می کند، مقادیر را نمی توان دوباره وارد کرد.'
 download_page_as_csv: 'دانلود صفحه به‌صورت CSV'
@@ -519,6 +539,9 @@ related_collection: مجموعه مرتبط
 related_collections: مجموعه های مرتبط
 translations_collection: مجموعه ترجمه ها
 languages_collection: مجموعه زبانها
+translations_preview_collections: مجموعه‌ها
+translations_preview_fields: کادرها
+translations_preview_relations: رابطه‌ها
 import_data_input_placeholder: CSV یا JSON...
 import_data_button: شروع وارد سازی
 import_data_indeterminate: وارد سازی داده ها...
@@ -533,7 +556,7 @@ snapshot:
   info: استخراج صرفا طرح‌واره برای اشتراک‌گذاری یا اشکال‌زدایی
 label_import: وارد کردن
 label_export: استخراج
-import_export: واردسازی / استحراج
+import_export: وارد کردن / صادر کردن
 format: فرمت
 last_page: صفحه آخر
 last_access: آخرین دسترسی
@@ -548,6 +571,7 @@ system: سیستم
 add_field_related: افزودن فیلد به مجموعه مرتبط
 interface_label: رابط کاربری
 display_label: نحوه نمایش
+x_axis_display_field: فیلد نمایش داده شده در محور افقی
 today: امروز
 yesterday: دیروز
 delete_comment: حذف دیدگاه
@@ -563,14 +587,14 @@ functions:
   second: ثانیه
   count: تعداد
 date-fns_date: فرمت PPP برای تاریخ
-date-fns_time: 'فرمت زمان h:mm:ss a'
-date-fns_time_no_seconds: 'فرمت زمان h:mm a'
-date-fns_time_24hour: 'فرمت زمان HH:mm:ss'
-date-fns_time_no_seconds_24hour: 'فرمت زمان HH:mm'
-date-fns_date_short: 'فرمت تاریخ MMM d, u'
-date-fns_time_short: 'فرمت زمان h:mma'
+date-fns_time: 'h:mm:ss a'
+date-fns_time_no_seconds: 'h:mm a'
+date-fns_time_24hour: 'HH:mm:ss'
+date-fns_time_no_seconds_24hour: 'HH:mm'
+date-fns_date_short: 'MMM d, u'
+date-fns_time_short: 'h:mma'
 date-fns_time_short_seconds: 'h:mm:ssa'
-date-fns_date_short_no_year: فرمت تاریخ MMM d
+date-fns_date_short_no_year: MMM d
 minutes: دقیقه
 hours: ساعت
 month: ماه
@@ -705,7 +729,6 @@ no_collections: مجموعه ای وجود ندارد
 create_collection: ساخت مجموعه
 no_collections_copy_admin: شما هنوز هیچ مجموعه ای ندارید. برای شروع روی دکمه زیر کلیک کنید.
 no_collections_copy: شما هنوز هیچ مجموعه‌ای ندارید. لطفا با مدیر کل سیستم خود تماس بگیرید.
-relationship_not_setup: این رابطه به درستی پیکربندی نشده است
 no_singleton_relations: Relationships to Singletons are not supported
 display_template_not_setup: گزینه نمایش قالب اشتباه پیکربندی شده است
 collection_field_not_setup: گزینه مجموعه فیلد به اشتباه پیکربندی شده است
@@ -788,6 +811,7 @@ errors:
   INVALID_OTP: رمزعبور یکبار مصرف اشتباه است
   INVALID_PAYLOAD: مجموعه داده نامعتبر
   INVALID_PROVIDER: کاربر متعلق به ارائه دهنده دیگری است
+  INVALID_PROVIDER_CONFIG: پیکربندی ارائه‌دهنده نامعتبر است
   INVALID_QUERY: کوئریِ نامعتبر
   INVALID_TOKEN: توکن نامعتبر است
   INVALID_USER: احراز هویت کاربر ناموفق بود
@@ -810,6 +834,7 @@ errors:
   VALUE_OUT_OF_RANGE: مقدار، خارج از محدوده است
   VALUE_TOO_LONG: مقدار، بسیار طولانی است
 security: امنیت
+value_securely_stored: مقدار به صورت امن ذخیره شده
 bookmark_name: نام نشانک...
 create_bookmark: ساخت نشانک
 edit_bookmark: ویرایش نشانک
@@ -825,7 +850,6 @@ unexpected_error_copy: خطای غیرمنتظره‌ای رخ داده است. 
 copy_details: کپی کردنِ جزئیات
 no_app_access: عدم دسترسی به برنامه
 no_app_access_copy: کاربر اجازه دسترسی به سامانه مدیریت را ندارد.
-password_reset_sent: اگر حساب کاربری دارید، یک پیوند امن برای بازنشانی رمز عبور برای شما ارسال کرده ایم
 password_reset_successful: رمز عبور با موفقیت بازنشانی شد
 back: بازگشت
 filter: فیلتر
@@ -837,7 +861,7 @@ flip_horizontal: پشت و رو کردن بصورت افقی
 flip_vertical: پشت و رو کردن به صورت عمودی
 aspect_ratio: نسبت ابعاد
 rotate: چرخش
-all_users: همه کابران
+all_users: همه کاربران
 delete_collection: حذف مجموعه
 update_collection_success: مجموعه های بروزرسانی شده
 delete_collection_success: مجموعه‌های حذف شده
@@ -1031,12 +1055,95 @@ operation_handle_resolve: 'تصمیم: برای افزودن کلیک کنید �
 operation_handle_reject: 'رد کردن: برای افزودن کلیک کنید یا برای مسیریابی مجدد بکشید'
 visual_editor: ویرایشگر بصری
 toggle_navigation: تغییر وضعیت ناوبری
+toggle_sidebar: تغییر وضعیت نوار کناری
 toggle_editable_elements: تغییر وضعیت عناصر قابل ویرایش
 no_url: URLی ارائه نشده است
 no_url_copy: لطفا یک URL در تنظیمات اضافه کنید.
 invalid_url: URL اشتباه
 invalid_url_copy: URL مشخص شده با هیچ یک از URL های مشخص شده در تنظیمات منطبق نیست.
 insights: بینش های داده ای
+deployment:
+  deployment: استقرار
+  overview:
+    overview: نمای کلی
+    providers: ارائه‌دهندگان
+    configure: پیکربندی
+    provider_description: اجرای استقرارهای {provider} از داخل دایرکتوس
+    projects: '{count} پروژه|{count} پروژه'
+  provider:
+    setup_title: 'راه‌اندازی {provider}'
+    credentials:
+      notice: این اطلاعات را می‌توانید در تنظیمات حساب کاربری {provider} تان پیدا کنید.
+      link: باز کردن تنظیمات {provider}
+    token:
+      label: توکن دسترسی شخصی
+      placeholder: توکن دسترسی خود را وارد کنید...
+      encrypted_notice: این توکن به صورت امن در پیکربندی دایرکتوس شما رمزنگاری و ذخیره خواهد شد
+    settings:
+      settings: 'پیکربندی {provider}'
+      edit_configuration: ویرایش پیکربندی
+      delete: حذف پیکربندی
+      delete_confirm: این عمل دائمی است و قابل بازگشت نیست. آیا مطمئن هستید که می خواهید ادامه دهید؟
+      remove_projects_confirm: حذف پروژه(های) ({projects}) همه تاریخچه استقرارهای آن‌ها را از دایرکتوس به طور دائمی حذف خواهد کرد. این اقدام غیرقابل بازگشت است. مطمئنید که می‌خواهید ادامه بدهید؟
+    vercel:
+      name: ورسل
+      settings_warning: تغییر اعتبارنامه‌ها یا شناسه تیم در صورتی که دیگر با پیکربندی جدید قابل دسترسی نباشند ممکن است بر پروژه‌های انتخاب شده شما اثر بگذارد.
+      team_id:
+        label: شناسه تیم
+        placeholder: team_xxxxxxxxxxxxx
+    netlify:
+      name: نتلیفای
+      settings_warning: تغییر اعتبارنامه‌ها یا نامک حساب در صورتی که دیگر با پیکربندی جدید قابل دسترسی نباشند ممکن است بر پروژه‌های انتخاب شده شما اثر بگذارد.
+      account_slug:
+        label: نامک حساب
+        hint: اختیاری. سایت‌ها را به یک حساب مشخص فیلتر کنید. برای نمایش همه سایت‌های در دسترس خالی بگذارید.
+        placeholder: your-account-slug
+    projects: پروژه‌ها
+    select_projects: پروژه‌ها را انتخاب کنید
+    select_projects_hint: انتخاب کنید که کدام پروژه‌ها را می‌خواهید از دایرکتوس مدیریت کنید
+    project:
+      not_deployable: پروژه توسط دایرکتوس قابل استقرار نیست. لطفا مستندات را برای اطلاعات بیشتر ببینید.
+    runs:
+      runs: اجراهای استقرار
+      id: شناسه استقرار
+      started: شروع شده
+      author: نویسنده
+      refresh: تازه‌سازی
+      deploy_preview: پیش‌نمایش استقرار
+      empty: اجرای استقرار وجود ندارد
+      empty_copy: این پروژه هنوز هیچ تاریخچه استقراری ندارد.
+    run:
+      title: '{project}: جزئیات استقرار'
+      id: شناسه استقرار
+      currently_deploying: در حال استقرار...
+      stop: توقف استقرار
+      cancel_confirm: این عمل دائمی است و قابل بازگشت نیست. آیا مطمئن هستید که می خواهید ادامه دهید؟
+      log_all: همه سطوح رخداد
+      search_logs: جستجوی رخدادها...
+      no_logs: هیچ رخدادی در دسترس نیست
+      download_logs: دانلود رخدادها
+      open_deployment: بازدید
+  no_providers: ارائه‌دهنده استقرار وجود ندارد
+  no_providers_copy: برای شروع، یک ارائه‌دهنده استقرار را در تنظیمات پیکربندی کنید.
+  select_provider: یک ارائه‌دهنده انتخاب کنید
+  select_provider_copy: برای دیدن پروژه، یک ارائه‌دهنده استقرار را از نوار کناری انتخاب کنید.
+  no_projects: پروژه‌ای وجود ندارد
+  no_projects_copy: پروژه‌ای برای این ارائه‌دهنده انتخاب نشده است.
+  no_runs: اجرای استقرار وجود ندارد
+  no_runs_copy: این پروژه هنوز هیچ تاریخچه استقراری ندارد.
+  deploy: استقرار
+  target: هدف
+  target_value:
+    production: تولید
+    preview: پيش نمايش
+  runs_status:
+    ready: آماده
+    building: در حال ساخت
+    error: ناموفق
+    canceled: لغو شده
+  dashboard:
+    projects: پروژه‌ها ({count})
+    deployed: مستقر شد
 dashboard: پیشخوان
 panel: پنل
 panel_options: تنظیمات پنل
@@ -1061,8 +1168,11 @@ no_data_in_flow: هیچ داده ای در این جریان تولید یا ب�
 accountability: مسئوليت
 payload: ظرفیت یا Payload
 details: جزئیات
+resume_streaming_logs: ادامه پخش رخدادها
+pause_streaming_logs: توقف پخش رخدادها
 logs_session_resumed: نشست رخدادها ادامه یافت...
 logs_session_paused: نشست رخدادها متوقف شد...
+logs_stream_disconnected: پخش رخدادها قطع شد...
 log_detail_filter_paths: 'فیلتر مسیرها (مثلا: req.method یا res.statusCode)'
 logs_beginning: این ابتدای نشست رخدادهای شماست...
 logs_waiting: 'در انتظار رخدادهای بیشتر...'
@@ -1168,6 +1278,7 @@ appearance_light: روشن
 appearance_dark: تیره
 other: دیگری...
 adding_user: اضافه کردن کاربر
+more_users: برای مشاهده بیشتر کلیک کنید
 unknown_user: کاربر ناشناس
 unknown_version: نسخه نامعلوم
 unknown_revision: بازنگری نامعلوم
@@ -1185,6 +1296,9 @@ settings_project: تنظیمات
 settings_appearance: ظاهر
 settings_ai: هوش مصنوعی
 model_context_protocol: دستورالعمل زمینه مدل (MCP)
+ai_assistant: دستیار هوش مصنوعی
+ai_disabled_by_env: قابلیت‌های دستیار هوش مصنوعی از طریق متغیر محیطی غیر فعال شده است.
+mcp_disabled_by_env: قابلیت‌های MCP از طریق متغیر محیطی غیر فعال شده است.
 settings_flows: اتوماسیون
 settings_system_logs: لاگ‌های سیستم
 settings_presets: نشانک‌ها
@@ -1205,9 +1319,14 @@ layout_setup: تنظیمات چیدمان
 data: داده ها
 unsaved_changes: تغییرات ذخیره نشده
 unsaved_changes_copy: آيا مطمئن هستيد که می خواهيد این صفحه را ترک کنيد؟
+unsaved_changes_collab: تغییرات مشارکتی ذخیره نشده
+unsaved_changes_copy_collab: شما در حال ویرایش این مورد با دیگران هستید. تغییرات شما فعلا در نشست مشارکتی باقی می‌ماند؛ ولی ممکن است اگر کسی آن‌ها را ذخیره نکند از دست برود.
+leave_page: ترک صفحه
+cancel_anyway: به هر حال لغو کن
 discard_changes: لغو تغییرات
 discard_all_changes: لغو تمام تغییرات
 discard_changes_copy: آیا مطمئن هستید که می‌خواهید تمام تغییرات خود را لغو کنید؟
+discard_changes_copy_collab: شما در حال ویرایش این مورد با دیگران هستید. لغو تغییرات، همه ویرایش‌های ذخیره نشده را برای هر کسی در این نشست مشارکتی پاک خواهد کرد.
 show_x_axis: نمایش محور X
 show_y_axis: نمایش محور Y
 keep_editing: ادامه دادن ویرایش
@@ -1246,6 +1365,7 @@ directus_collection:
   directus_dashboards: داشبوردهای درون ماژول Insights
   directus_fields: پیکربندی فیلد اضافی و ابرداده
   directus_files: فراداده برای همه Assets های فایل مدیریت شده
+  directus_flows: جریان‌های خودکارسازی
   directus_folders: دایرکتوری های مجازی برای فایل ها فراهم می کند
   directus_migrations: از چه نسخه ای از پایگاه داده استفاده می کنید
   directus_notifications: اعلانهای ارسالی به کاربر
@@ -1361,10 +1481,10 @@ fields:
     avif: AVIF
     reporting: گزارش‌گیری
     mapping: نقشه برداری
-    basemaps: Basemap
+    basemaps: نقشه‌های پایه
     basemaps_raster: Raster
     basemaps_tile: Raster TileJSON
-    basemaps_style: Mapbox Style
+    basemaps_style: سبک مپ‌باکس
     mapbox_key: کلید دسترسی Mapbox
     mapbox_placeholder: pk.eyJ1Ijo.....
     attribution: انتساب
@@ -1410,6 +1530,9 @@ fields:
     public_registration_verify_email: تایید ایمیل
     public_registration_verify_email_note: ایمیلی برای کاربر در حال ثبت نام می‌فرستد که از آن‌ها می‌خواهد روی یک لینک تایید کلیک کنند تا به آن‌ها اجازه ثبت نام داده شود.
     visual_editor_urls: URLهای ویرایشگر بصری
+    collaborative_editing: ویرایش مشارکتی
+    collaborative_editing_note: وب‌سوکت‌ها برای کار کردن ویرایش مشارکتی ضروری هستند.
+    ai_notice: 'دستیار هوش مصنوعی، نوار کناری داخل برنامه‌ای برای مکالمه با یک مدل زبانی بزرگ ارائه می‌دهد. به محض فعال‌سازی، نوار کناری هوش مصنوعی را برای پرسیدن سوالات، تولید محتوا و کمک گرفتن برای کار با پروژه‌تان از جعبه ابزار باز کنید. <a href="https://directus.io/docs/guides/ai/assistant" target="_blank">درباره پیکربندی و استفاده از دستیار هوش مصنوعی بیشتر یاد بگیرید.</a>'
     mcp_enabled: سرور MCP
     mcp_enabled_note: 'ابزارهای AI/LLM را از طریق <a href="https://directus.io/docs/guides/ai/mcp" target="_blank">چارچوب زمینه مدل (MCP)</a> به پروژه دایرکتوس خود متصل کنید. این کار، دستیارهای هوش مصنوعی را قادر به خواندن و تعامل امن با داده دایرکتوس شما می‌کند.'
     mcp_notice: 'چارچوب زمینه مدل (MCP)، استانداردی برای اتصال مدل‌های زبانی بزرگ (LLMها) به برنامه‌هایی شبیه دایرکتوس است. به محض فعالسازی، سرور MCP دایرکتوس در نشانی `/mcp` در دسترس خواهد بود. <a href="https://directus.io/docs/guides/ai/mcp" target="_blank">درباره MCP و روش اتصال بیشتر بدانید.</a>'
@@ -1423,6 +1546,28 @@ fields:
     mcp_system_prompt_enabled_note: "از <a href='https://directus.io/docs/guides/ai/mcp#system-prompt' target='_blank'>پرامپت سیستمی پیش‌فرض</a> برای هدایت رفتار LLM استفاده کنید. برای حذف یا جایگزین کردن با پرامپت خودتان در پایین غیرفعال کنید."
     mcp_system_prompt: پرامپت سیستمی سفارشی
     mcp_system_prompt_note: 'پرامپت سیستمی سفارشی برای جایگزینی با پیش‌فرض. برای استفاده از مقدار پیش‌فرض خالی بگذارید (اگر بالا فعال شده).'
+    ai_system_prompt: دستورالعمل سیستمی هوش مصنوعی
+    ai_system_prompt_note: 'دستورالعمل سیستمی سفارشی هوش مصنوعی برای هدایت رفتار هوش مصنوعی در تعاملات دستیار هوش مصنوعی. برای استفاده از پیش‌فرض خالی بگذارید.'
+    ai_openai_api_key: OpenAI API Key
+    ai_openai_allowed_models: مدل‌های مجاز OpenAI
+    ai_anthropic_api_key: Anthropic API Key
+    ai_anthropic_allowed_models: مدل‌های مجاز Anthropic
+    ai_google_api_key: Google API Key
+    ai_google_allowed_models: مدل‌های مجاز گوگل
+    ai_openai_compatible: ارائه‌دهنده سازگار با OpenAI
+    ai_openai_compatible_name: نام ارائه‌دهنده
+    ai_openai_compatible_base_url: نشانی پایه
+    ai_openai_compatible_api_key: API Key
+    ai_openai_compatible_models: مدل‌ها
+    ai_openai_compatible_headers: هدرهای سفارشی
+    ai_model_id: شناسه مدل
+    ai_context_limit: محدودیت زمینه
+    ai_output_limit: محدودیت خروجی
+    ai_supports_attachments: از پیوست‌ها پشتیبانی می‌کند
+    ai_supports_reasoning: از استدلال پشتیبانی می‌کند
+    ai_provider_options: گزینه‌های ارائه‌دهنده
+    ai_provider_options_note: گزینه‌های مخصوص ارائه‌دهنده که به نقاط پایانی هوش مصنوعی فرستاده می‌شود.
+    ai_header_name: سربرگ
   directus_shares:
     name: نام
     role: نقش
@@ -1477,15 +1622,16 @@ field_options:
     transforms_note: نام متود شارپ و آرگومان های آن. برای اطلاعات بیشتر به https://sharp.pixelplumbing.com/api-constructor مراجعه کنید.
     mapbox_key: کلید دسترسی Mapbox
     mapbox_placeholder: pk.eyJ1Ijo.....
-    basemaps: Basemap
-    basemaps_name_placeholder: نام Basemap را وارد کنید...
+    basemaps: نقشه‌های پایه
+    basemaps_name_placeholder: نام نقشه پایه را وارد کنید...
     basemaps_raster: Raster
     basemaps_tile: Raster TileJSON
-    basemaps_style: Mapbox Style
+    basemaps_style: سبک مپ‌باکس
     files_divider_title: فایلها و تصاویر کوچک
     overrides_divider_title: لغو برنامه
   directus_activity:
     login: ورود به سیستم
+    logout: خروج
     create: ایجاد
     update: بروزرسانی
     delete: حذف
@@ -1576,18 +1722,92 @@ live_preview:
   close_window: حالت توو در توو
   toggle_3d: حالت سه بعدی
   iframe_title: پیش نمایش زنده وب‌سایت
+  display_options: تنظیمات نحوه نمایش
+  exit_full_width: خروج از تمام عرض
+  open_in_visual_editor: باز کردن در ویرایشگر بصری
 shares: اشتراک‌گذاری
 unlimited_usage: Unlimited usage
 uses_left: هیچ استفاده‌ای نمانده | یک استفاده مانده | {n} استفاده مانده
 no_shares: هیچ اشتراک گذاری برای نمایش نیست
 new_share: اشتراک گذاری جدید
+show_more: نمایش بیشتر
+show_less: نمایش کمتر
 ai:
+  thinking: در حال فکر کردن...
   input: ورودی
+  output: خروجی
+  streaming: در حال پخش...
+  ready: آماده
+  complete: کامل
+  error: خطا
+  error_message: خطایی رخ داده است
+  unknown_error: خطای نامشخص
   unknown: نامشخص
+  approval_requested: درخواست تایید داده شد
+  approve: تایید
+  always_allow: همیشه اجازه بده
+  deny: رد کردن
+  approve_tool_execution: اجرای ابزار را تایید می‌کنید؟
+  retry: تلاش مجدد
+  prompt_input_placeholder: پیام خود را اینجا بنویسید...
+  clear_conversation: خالی کردن گفت‌وگو
+  build_with_assistant: با دستیار هوش مصنوعی بسازید
+  responses_may_be_inaccurate: پاسخ‌های هوش مصنوعی ممکن است دقیق نباشد
+  add_content: افزودن محتوا
+  prompt: دستورالعمل
+  prompts: دستورالعمل‌ها
+  items: آیتمها
+  content: محتوا
+  insert_prompt: افزودن دستورالعمل
+  insert_reusable_prompt: یک قالب دستورالعمل قابل استفاده مجدد اضافه کنید
+  insert_item_context: افزودن زمینه مورد
+  coming_soon: به زودی
+  failed_to_load_prompts: ناموفق در بارگیری دستورالعمل‌ها
+  failed_to_load_items: ناموفق در بارگیری موارد
+  some_context_failed: '{count} مورد زمینه بارگیری نشد'
+  prompt_inserted: دستورالعمل اضافه شد
+  prompt_staged: دستورالعمل جاگیر شد
+  items_staged: موارد جاگیر شدند
+  some_items_staged: '{count} مورد جاگیر شد (به محدودیت رسیدید)'
+  image_preview: پیش‌نمایش تصویر
+  item_staged: مورد جاگیر شد
+  invalid_collection: مجموعه نامعتبر
+  element_already_staged: عنصر قبلا جاگیر شده است
+  max_elements_reached: به حداکثر عناصر رسیدید
+  element_staged: عنصر جاگیر شد
+  failed_to_insert_prompt: ناموفق در افزودن دستورالعمل
+  go_to_settings: برو به تنظیمات
+  setup_ai_assistant: تنظیم دستیار هوش مصنوعی
+  setup_ai_assistant_admin_description: برای فعال‌سازی دستیار هوش مصنوعی، کلید API ارائه‌دهنده هوش مصنوعی خود را در تنظیمات اضافه کنید.
+  setup_ai_assistant_user_description: با مدیر کل خود برای فعال‌سازی دستیار هوش مصنوعی تماس بگیرید.
   settings: تنظیمات
   tool_approval:
+    always: همیشه مجاز
+    ask: نیازمند تایید
     disabled: غیرفعال شده
+  enabled_tools: ابزارهای فعال شده
+  disabled_tools: ابزارهای غیرفعال شده
+  ask_user_submit: ارسال
+  ask_user_next: بعدی
+  ask_user_skip: رد کردن
+  ask_user_chat_about_this: گفتگو درباره این
+  ask_user_type_answer: پاسخ خود را بنویسید...
+  ask_user_skipped: رد شده
+  tool_descriptions:
+    items: ایجاد، خواندن، ویرایش و حذف محتوا
+    files: جستجو و مدیریت فایل‌ها
+    folders: ایجاد و سازمان‌دهی پوشه‌ها
+    flows: ایجاد و به‌روزرسانی جریان‌ها
+    trigger-flow: اجرای جریان‌های اجرا شده به صورت دستی
+    operations: مدیریت عملیات‌های داخل جریان‌ها
+    schema: دریافت اطلاعات طرح‌واره پایگاه داده
+    collections: ایجاد و مدیریت مجموعه‌ها
+    fields: ایجاد و پیکربندی فیلدهای مجموعه
+    relations: تنظیم روابط بین مجموعه‌ها
 ai_tools:
+  ask_user: پرسیدن از کاربر
+  update_form_values: به‌روزرسانی مقادیر فرم
+  read_form_values: خواندن مقادیر فرم
   items: آیتمها
   files: فایل ها
   folders: پوشه‌ها
@@ -1597,6 +1817,7 @@ ai_tools:
   schema: اسکیما
   collections: مجموعه‌ها
   fields: کادرها
+  relations: رابطه‌ها
 mcp_prompts_collection:
   no_collection_selected: مجموعه‌ای انتخاب نشده است
   no_collection_selected_copy: مجموعه‌ای را برای فعال‌سازی قالب‌های پرامپت قابل استفاده مجدد انتخاب کنید.
@@ -1658,6 +1879,7 @@ no_permissions: بدون مجوز
 permission_add_collection: ایجاد مجموعه
 default_label: پیش‌فرض
 delete_label: حذف
+discard_label: لغو
 delete_are_you_sure: >-
   این عمل دائمی است و قابل بازگشت نیست. آیا مطمئن هستید که می خواهید ادامه دهید؟
 delete_field_are_you_sure: >-
@@ -1694,6 +1916,7 @@ colors:
 junction_collection: مجموعه اتصالات
 latency: تأخیر
 login: ورود به سیستم
+logout: خروج
 my_activity: فعالیت های من
 not_authenticated: احراز هویت نشده
 authenticated: احراز هویت شده
@@ -1788,13 +2011,18 @@ interfaces:
     all_opened: همه باز باشند
     accordion_mode: حالت آکاردئون
     max_one_section_open: حداکثر 1 بخش باز باشد
+  group-tabs:
+    fill_width: عرض کامل
   presentation-links:
     presentation-links: دکمه‌‌ها
+    description: دکمه های لینک قابل تنظیم برای راه‌اندازی نشانی‌های پویا یا راه‌اندازی جریان‌ها
     style: استایل
     primary: اصلی
     link: لینک‌‌ها
     button: دکمه‌‌ها
     error: امکان انجام این کار نیست
+    action_type: نوع اقدام
+    select_manual_flow_note: جریان باید با یک اجراکننده دستی برای این مجموعه تنظیم شده باشد
   select-multiple-checkbox:
     checkboxes: کادر انتخابی
     description: بین چند گزینه از طریق جعبه انتخاب
@@ -1875,6 +2103,9 @@ interfaces:
   file:
     file: فایل
     description: انتخاب یا آپلود یک فایل
+    allowed_mime_types: Mime Typeهای مجاز
+    mime_types_placeholder: MIME Typeهای مجاز را انتخاب کنید یا اضافه کنید...
+    mime_types_note: به یاد داشته باشید که FILES_MIME_TYPE_ALLOW_LIST سراسری که در env تعریف کردید، نسبت به انتخاب فوق اولویت خواهد داشت.
   files:
     files: فایل ها
     description: انتخاب یا آپلود موارد بیشتر
@@ -1967,7 +2198,7 @@ interfaces:
   system-folder:
     folder: پوشه اصلی
     description: یک پوشه انتخاب کنید
-    field_hint: Default folder for uploaded files without a folder specified. Does not affect existing files.
+    field_hint: پوشه پیش‌فرض برای فایل‌های بارگزاری‌شده بدون انتخاب پوشه. روی فایل‌های موجود تاثیر ندارد.
     root_name: پوشه اصلی مجموعه فایلها
     system_default: پیش فرض سیستم
   select-radio:
@@ -2111,7 +2342,6 @@ interfaces:
     value_securely_saved: Value Securely Saved
     generate: Generate Token
     regenerate: بازسازی توکن
-    generate_success_copy: مطمئن شوید که توکن بالا را پشتیبان‌گیری و رونوشت کرده‌اید. به دلایل امنیتی، بعد از ذخیره‌سازی و بستن این صفحه امکان مشاهده مجدد توکن را نخواهید داشت.
     remove_token: حذف توکن
   system-raw-editor:
     system-raw-editor: ویرایشگر خام
@@ -2119,9 +2349,26 @@ interfaces:
   input-password:
     input-password: ورود رمز عبور
     description: ورودی پسورد با دکمه‌ای برای مخفی کردن مقدار
+  flow-select:
+    flow-select: انتخاب جریان
   header:
     header: سربرگ
+    description: ایجاد یک سربرگ با عنوان، زیرعنوان، اطلاعات کمکی و/یا لینک‌هایی برای کمک به کاربران در ناوبری یا اجرای جریان‌ها.
     links: لینک‌‌ها
+    action_type: نوع اقدام
+    help:
+      title: راهنما
+      note: اطلاعات راهنمای قابل باز و بسته کردن به کاربر ارائه می‌دهد.
+    help_display_mode:
+      title: نحوه نمایش راهنما
+      note: نحوه نمایش را برای اطلاعات راهنما انتخاب کنید.
+    enable_help_translations:
+      title: فعال‌سازی ترجمه‌های راهنما
+      note: در صورت فعال‌سازی، فیلد راهنما را با مقادیری از فیلد متن ترجمه‌های راهنما جایگزین خواهد کرد.
+    help_translations_string:
+      title: متن ترجمه‌های راهنما
+      note: باید ترجمه‌ای برای این کلید در تنظیمات ترجمه‌های پروژه خود با محتوای ترجمه‌شده برای هر زبانی که می‌خواهید پشتیبانی شود بسازید.
+    collapse: بستن راهنما
 displays:
   translations:
     translations: ترجمه‌ها
@@ -2273,7 +2520,7 @@ layouts:
     first_day: اولین روز هفته
   map:
     map: نقشه
-    basemap: نقشه اصلی
+    basemap: نقشه پایه
     layers: لایه‌ها
     cluster_options: تنظیمات کلاسترینگ
     cluster: دسته‌بندی داده‌‌های نزدیک
@@ -2430,9 +2677,11 @@ triggers:
 a_flow_uuid: یک جریان را جهت راه‌اندازی انتخاب کنید...
 any_string_or_json: Json یا هر رشته‌ای...
 item_payload_placeholder: این JSON برای به‌روزرسانی مقادیر فیلد به‌کارگیری می‌شود...
+operation_variables_note: شما می‌توانید با متغیرهایی نظیر **{'{'}{'{'}$last{'}'}{'}'}**، **{'{'}{'{'}$trigger{'}'}{'}'}** و **{'{'}{'{'}$accountability{'}'}{'}'}** به داده‌های جریان دسترسی پیدا کنید؛ یا با **{'{'}{'{'}operation_key{'}'}{'}'}** به عملیات‌های قبلی ارجاع بدهید.
 operations:
   condition:
     name: شرط
+    description: مسیردهی به یک جریان بر اساس منطق اگر / آنگاه
   exec:
     name: اجرای اسکریپت
     description: خواندن داده از پایگاه داده
@@ -2463,6 +2712,7 @@ operations:
     query: کوئری
   json-web-token:
     name: JSON Web Token (JWT)
+    description: امضا و تایید JSON Web Tokens
     operation: عملیات
     secret: سکرت
     secret_placeholder: سکرت را وارد کنید...
@@ -2471,6 +2721,9 @@ operations:
     token_placeholder: eyJhbGciOi......
     options: گزینه‌ها
     options_placeholder: 'برای مشاهده گزینه‌های موجود به https://www.npmjs.com/package/jsonwebtoken#usage مراجعه کنید'
+    sign: امضای توکن
+    verify: تایید توکن
+    decode: رمزگشایی توکن
   log:
     name: ذخیره رخداد در کنسول
     description: خروجی چیزی به کنسول
@@ -2525,6 +2778,7 @@ operations:
     description: تغییر حامل JSON جریان
   trigger:
     name: راه‌اندازی جریان
+    description: انتقال این داده به جریان دیگر
     flows: جریان‌ها
     flow: جریان
     data: داده Data
@@ -2567,8 +2821,10 @@ minimum_fraction_digits: حداقل اعشار
 maximum_fraction_digits: حداکثر اعشار
 show_percentage: نمایش درصد
 aggregation: تجمیع
+series_grouping: گروه‌بندی دنباله‌ها
 date_precision: دقت داده
 export_dashboard: صدور داشبورد
+duplicate_dashboard: رونوشت از پیشخوان
 search_dashboard: جستجوی داشبورد...
 search_flow: جستجوی جریان...
 percent: درصد
@@ -2584,3 +2840,4 @@ accepted: پذیرفته شده
 text_direction_auto: خودکار (مطابق زبان)
 text_direction_ltr: چپ به راست (LTR)
 text_direction_rtl: راست به چپ (RTL)
+set_to_now: تنظیم به اکنون
