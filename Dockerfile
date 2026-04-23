@@ -26,12 +26,12 @@ USER node
 ENV NODE_OPTIONS=--max-old-space-size=8192
 
 COPY pnpm-lock.yaml .
-RUN pnpm fetch --prod
+RUN pnpm fetch
 
 COPY --chown=node:node . .
 RUN <<EOF
 	set -ex
-	pnpm install --recursive --offline --frozen-lockfile --prod
+	pnpm install --recursive --offline --frozen-lockfile
 	npm_config_workspace_concurrency=2 pnpm run build
 	pnpm --filter directus deploy --legacy --prod dist
 	cd dist
