@@ -50,7 +50,9 @@
 			"defu": "6.1.7",
 			"unplugin-vue>vite": "8.0.8",
 			"protobufjs": "7.5.5",
-			"simple-git": "^3.36.0"
+			"simple-git": "^3.36.0",
+			"liquidjs": "10.25.7",
+			"@xmldom/xmldom": "0.8.13"
 		}
 	},
 	"packageManager": "pnpm@10.27.0",

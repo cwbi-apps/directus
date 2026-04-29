@@ -648,9 +648,6 @@ catalogs:
     ldapts:
       specifier: 8.1.3
       version: 8.1.3
-    liquidjs:
-      specifier: 10.25.5
-      version: 10.25.5
     lodash:
       specifier: 4.18.1
       version: 4.18.1
@@ -949,6 +946,8 @@ overrides:
   unplugin-vue>vite: 8.0.8
   protobufjs: 7.5.5
   simple-git: ^3.36.0
+  liquidjs: 10.25.7
+  '@xmldom/xmldom': 0.8.13
 
 importers:
 
@@ -1276,8 +1275,8 @@ importers:
         specifier: 'catalog:'
         version: 8.1.3
       liquidjs:
-        specifier: 'catalog:'
-        version: 10.25.5
+        specifier: 10.25.7
+        version: 10.25.7
       lodash-es:
         specifier: 'catalog:'
         version: 4.18.1
@@ -7754,8 +7753,8 @@ packages:
     resolution: {integrity: sha512-CJDxIgE5I0FH+ttq/Fxy6nRpxP70+e2O048EPe85J2use3XKdatVM7dDVvFNjQudd9B49NPoZ+8PG49zj4Er8Q==}
     engines: {node: '>= 16'}
 
-  '@xmldom/xmldom@0.8.12':
-    resolution: {integrity: sha512-9k/gHF6n/pAi/9tqr3m3aqkuiNosYTurLLUtc7xQ9sxB/wm7WPygCv8GYa6mS0fLJEHhqMC1ATYhz++U/lRHqg==}
+  '@xmldom/xmldom@0.8.13':
+    resolution: {integrity: sha512-KRYzxepc14G/CEpEGc3Yn+JKaAeT63smlDr+vjB8jRfgTBBI9wRj/nkQEO+ucV8p8I9bfKLWp37uHgFrbntPvw==}
     engines: {node: '>=10.0.0'}
 
   '@yarnpkg/fslib@3.1.3':
@@ -11077,8 +11076,8 @@ packages:
   linkify-it@5.0.0:
     resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
 
-  liquidjs@10.25.5:
-    resolution: {integrity: sha512-GKiKeZjJDdVoQAu+S9rzkYsYnYhcep5W3WwZXgb5f+yq484P/k9JqamBbGYu+LBEixcUAXZr2jogdAIjB3ki1w==}
+  liquidjs@10.25.7:
+    resolution: {integrity: sha512-rPCjJLiD4eDhQjvv964AeXFC+HbeYBbZrd7Z82Q6hqv1lX7G+5w4SJcKLn9CAAAwHI4aS3dTdo083UB79K3pDA==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -15105,7 +15104,7 @@ snapshots:
 
   '@authenio/xml-encryption@2.0.2':
     dependencies:
-      '@xmldom/xmldom': 0.8.12
+      '@xmldom/xmldom': 0.8.13
       escape-html: 1.0.3
       xpath: 0.0.32
 
@@ -20579,7 +20578,7 @@ snapshots:
 
   '@xmldom/is-dom-node@1.0.1': {}
 
-  '@xmldom/xmldom@0.8.12': {}
+  '@xmldom/xmldom@0.8.13': {}
 
   '@yarnpkg/fslib@3.1.3':
     dependencies:
@@ -24199,7 +24198,7 @@ snapshots:
     dependencies:
       uc.micro: 2.1.0
 
-  liquidjs@10.25.5:
+  liquidjs@10.25.7:
     dependencies:
       commander: 10.0.1
 
@@ -26561,7 +26560,7 @@ snapshots:
   samlify@2.12.0:
     dependencies:
       '@authenio/xml-encryption': 2.0.2
-      '@xmldom/xmldom': 0.8.12
+      '@xmldom/xmldom': 0.8.13
       node-rsa: 1.1.1
       xml: 1.0.1
       xml-crypto: 6.1.2
@@ -28630,7 +28629,7 @@ snapshots:
   xml-crypto@6.1.2:
     dependencies:
       '@xmldom/is-dom-node': 1.0.1
-      '@xmldom/xmldom': 0.8.12
+      '@xmldom/xmldom': 0.8.13
       xpath: 0.0.33
 
   xml-escape@1.1.0: {}
