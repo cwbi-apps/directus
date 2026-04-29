@@ -948,6 +948,8 @@ overrides:
   simple-git: ^3.36.0
   liquidjs: 10.25.7
   '@xmldom/xmldom': 0.8.13
+  picomatch@^4: 4.0.4
+  picomatch@^2: 2.3.2
 
 importers:
 
@@ -26180,7 +26182,7 @@ snapshots:
 
   readdirp@3.6.0:
     dependencies:
-      picomatch: 4.0.4
+      picomatch: 2.3.2
 
   readdirp@4.1.2: {}
 
