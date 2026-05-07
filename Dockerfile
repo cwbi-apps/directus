@@ -59,6 +59,7 @@ RUN rm -rf /directus/node_modules/.pnpm/@esbuild+linux-x64@0.25.12/
 FROM node:${NODE_VERSION}-alpine AS runtime
 
 RUN npm install --global \
+	npm@latest \
 	pm2@5 \
 	corepack@latest # Remove again once corepack >= 0.31 made it into base image
 
