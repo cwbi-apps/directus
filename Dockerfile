@@ -3,7 +3,7 @@
 ARG NODE_VERSION=22
 
 ####################################################################################################
-## Build Packages
+## Build Packages.
 
 FROM node:${NODE_VERSION}-alpine AS builder
 
