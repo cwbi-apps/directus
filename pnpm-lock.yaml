@@ -928,8 +928,8 @@ catalogs:
       specifier: 0.5.0
       version: 0.5.0
     ws:
-      specifier: 8.18.3
-      version: 8.18.3
+      specifier: 8.20.1
+      version: 8.20.1
     zod:
       specifier: 4.1.12
       version: 4.1.12
@@ -941,7 +941,7 @@ overrides:
   fast-xml-parser: 5.7.2
   '@yarnpkg/shell>cross-spawn': 7.0.6
   tar: 7.5.13
-  qs: 6.15.1
+  qs: 6.15.2
   minimatch@10: 10.2.5
   minimatch@9: 9.0.9
   basic-ftp: 5.3.1
@@ -955,7 +955,7 @@ overrides:
   unplugin-vue>vite: 8.0.10
   '@xmldom/xmldom': 0.8.13
   vitest@3>vite: 7.3.2
-  protobufjs: 7.5.6
+  protobufjs: 7.5.8
   picomatch@^4: 4.0.4
   picomatch@^2: 2.3.2
   serialize-javascript: 7.0.5
@@ -972,6 +972,7 @@ overrides:
   liquidjs@10.25: ^10.26.0
   samlify@2.12: ^2.13.0
   uuid@11.1: ^11.1.1
+  ws@^8.18.3: ^8.20.1
 
 importers:
 
@@ -1252,7 +1253,7 @@ importers:
         version: 9.1.0(graphql@16.12.0)
       graphql-ws:
         specifier: 'catalog:'
-        version: 6.0.6(graphql@16.12.0)(ws@8.18.3)
+        version: 6.0.6(graphql@16.12.0)(ws@8.20.1)
       helmet:
         specifier: 'catalog:'
         version: 8.1.0
@@ -1374,8 +1375,8 @@ importers:
         specifier: 'catalog:'
         version: 2.0.7
       qs:
-        specifier: 6.15.1
-        version: 6.15.1
+        specifier: 6.15.2
+        version: 6.15.2
       rate-limiter-flexible:
         specifier: 'catalog:'
         version: 7.2.0
@@ -1420,7 +1421,7 @@ importers:
         version: 0.5.0
       ws:
         specifier: 'catalog:'
-        version: 8.18.3
+        version: 8.20.1
       zod:
         specifier: 'catalog:'
         version: 4.1.12
@@ -2977,7 +2978,7 @@ importers:
         version: 4.6.3(vue@3.5.24(typescript@5.9.3))
       ws:
         specifier: 'catalog:'
-        version: 8.18.3
+        version: 8.20.1
       zod:
         specifier: 'catalog:'
         version: 4.1.12
@@ -3264,7 +3265,7 @@ importers:
         version: 14.1.0
       graphql-ws:
         specifier: 'catalog:'
-        version: 6.0.6(graphql@16.12.0)(ws@8.18.3)
+        version: 6.0.6(graphql@16.12.0)(ws@8.20.1)
       ioredis:
         specifier: 'catalog:'
         version: 5.8.2
@@ -3315,7 +3316,7 @@ importers:
         version: 1.6.1(@types/node@24.9.1)(happy-dom@20.8.9)(jsdom@20.0.3)(lightningcss@1.32.0)(sass-embedded@1.93.3)(sass@1.93.3)(terser@5.44.0)
       ws:
         specifier: 'catalog:'
-        version: 8.18.3
+        version: 8.20.1
 
   tests/e2e:
     devDependencies:
@@ -10500,7 +10501,7 @@ packages:
       crossws: ~0.3
       graphql: ^15.10.1 || ^16
       uWebSockets.js: ^20
-      ws: ^8
+      ws: ^8.20.1
     peerDependenciesMeta:
       '@fastify/websocket':
         optional: true
@@ -13027,8 +13028,8 @@ packages:
   proto-list@1.2.4:
     resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}
 
-  protobufjs@7.5.6:
-    resolution: {integrity: sha512-M71sTMB146U3u0di3yup8iM+zv8yPRNQVr1KK4tyBitl3qFvEGucq/rGDRShD2rsJhtN02RJaJ7j5X5hmy8SJg==}
+  protobufjs@7.5.8:
+    resolution: {integrity: sha512-dvpCIeLPbXZS/Ete7yLaO7RenOdken2NHKykBXbsaGxZT0UTltcarBciw+A78SRQs9iMAAVpsYA+l8b1hTePIA==}
     engines: {node: '>=12.0.0'}
 
   protocol-buffers-schema@3.6.0:
@@ -13075,8 +13076,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  qs@6.15.1:
-    resolution: {integrity: sha512-6YHEFRL9mfgcAvql/XhwTvf5jKcOiiupt2FiJxHkiX1z4j7WL8J/jRHYLluORvc1XxB5rV20KoeK00gVJamspg==}
+  qs@6.15.2:
+    resolution: {integrity: sha512-Rzq0KEyX/w/tEybncDgdkZrJgVUsUMk3xjh3t5bv3S1HTAtg+uOYt72+ZfwiQwKdysThkTBdL/rTi6HDmX9Ddw==}
     engines: {node: '>=0.6'}
 
   quansync@0.2.11:
@@ -15309,8 +15310,20 @@ packages:
       utf-8-validate:
         optional: true
 
-  ws@8.18.3:
-    resolution: {integrity: sha512-PEIGCY5tSlUt50cqyMXfCzX+oOPqN0vuGqWzbcJ2xvnkzkq46oOpz7dQaTDBdfICb4N14+GARUDw2XV2N4tvzg==}
+  ws@8.20.1:
+    resolution: {integrity: sha512-It4dO0K5v//JtTXuPkfEOaI3uUN87iYPnqo/ZzqCoG3g8uhA66QUMs/SrM0YK7/NAu+r4LMh/9dq2A7k+rHs+w==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
+  ws@8.21.0:
+    resolution: {integrity: sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -18172,7 +18185,7 @@ snapshots:
       '@opentelemetry/sdk-logs': 0.202.0(@opentelemetry/api@1.9.0)
       '@opentelemetry/sdk-metrics': 2.0.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/sdk-trace-base': 2.0.1(@opentelemetry/api@1.9.0)
-      protobufjs: 7.5.6
+      protobufjs: 7.5.8
 
   '@opentelemetry/resources@2.0.1(@opentelemetry/api@1.9.0)':
     dependencies:
@@ -21648,7 +21661,7 @@ snapshots:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       on-finished: 2.4.1
-      qs: 6.15.1
+      qs: 6.15.2
       raw-body: 2.5.2
       type-is: 1.6.18
       unpipe: 1.0.0
@@ -21663,7 +21676,7 @@ snapshots:
       http-errors: 2.0.0
       iconv-lite: 0.7.2
       on-finished: 2.4.1
-      qs: 6.15.1
+      qs: 6.15.2
       raw-body: 3.0.1
       type-is: 2.0.1
     transitivePeerDependencies:
@@ -23185,7 +23198,7 @@ snapshots:
       parseurl: 1.3.3
       path-to-regexp: 0.1.13
       proxy-addr: 2.0.7
-      qs: 6.15.1
+      qs: 6.15.2
       range-parser: 1.2.1
       safe-buffer: 5.2.1
       send: 0.19.0
@@ -23221,7 +23234,7 @@ snapshots:
       parseurl: 1.3.3
       path-to-regexp: 0.1.13
       proxy-addr: 2.0.7
-      qs: 6.15.1
+      qs: 6.15.2
       range-parser: 1.2.1
       safe-buffer: 5.2.1
       send: 0.19.0
@@ -23256,7 +23269,7 @@ snapshots:
       once: 1.4.0
       parseurl: 1.3.3
       proxy-addr: 2.0.7
-      qs: 6.15.1
+      qs: 6.15.2
       range-parser: 1.2.1
       router: 2.2.0
       send: 1.2.0
@@ -23847,11 +23860,11 @@ snapshots:
     dependencies:
       graphql: 16.12.0
 
-  graphql-ws@6.0.6(graphql@16.12.0)(ws@8.18.3):
+  graphql-ws@6.0.6(graphql@16.12.0)(ws@8.20.1):
     dependencies:
       graphql: 16.12.0
     optionalDependencies:
-      ws: 8.18.3
+      ws: 8.20.1
 
   graphql@16.12.0: {}
 
@@ -23879,7 +23892,7 @@ snapshots:
       '@types/ws': 8.18.1
       entities: 7.0.1
       whatwg-mimetype: 3.0.0
-      ws: 8.18.3
+      ws: 8.21.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -24532,7 +24545,7 @@ snapshots:
       whatwg-encoding: 2.0.0
       whatwg-mimetype: 3.0.0
       whatwg-url: 11.0.0
-      ws: 8.18.3
+      ws: 8.21.0
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -26580,7 +26593,7 @@ snapshots:
 
   proto-list@1.2.4: {}
 
-  protobufjs@7.5.6:
+  protobufjs@7.5.8:
     dependencies:
       '@protobufjs/aspromise': 1.1.2
       '@protobufjs/base64': 1.1.2
@@ -26644,7 +26657,7 @@ snapshots:
       pngjs: 5.0.0
       yargs: 15.4.1
 
-  qs@6.15.1:
+  qs@6.15.2:
     dependencies:
       side-channel: 1.1.0
 
@@ -28026,7 +28039,7 @@ snapshots:
       formidable: 3.5.4
       methods: 1.1.2
       mime: 2.6.0
-      qs: 6.15.1
+      qs: 6.15.2
     transitivePeerDependencies:
       - supports-color
 
@@ -29378,7 +29391,9 @@ snapshots:
 
   ws@7.5.10: {}
 
-  ws@8.18.3: {}
+  ws@8.20.1: {}
+
+  ws@8.21.0: {}
 
   wsl-utils@0.1.0:
     dependencies:
