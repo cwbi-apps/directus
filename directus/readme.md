@@ -9,7 +9,7 @@
 
 ---
 
-## 🐰 Introduction
+## 🐰 Introduction 
 
 Directus is a real-time API and App dashboard for managing SQL database content.
 
