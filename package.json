@@ -65,10 +65,10 @@
 			"fast-xml-builder": "^1.1.7",
 			"fast-uri": "^3.1.2",
 			"systeminformation": "^5.31.6",
-			"@tootallnate/once@^2.0.0": "^2.0.1",
-			"liquidjs@^10.25.7": "^10.26.0",
-			"samlify@^2.12.0": "^2.13.0",
-			"uuid@^11.1.0": "^11.1.1"
+			"@tootallnate/once@^2.0.x": "^2.0.1",
+			"liquidjs@^10.25.x": "^10.26.0",
+			"samlify@^2.12.x": "^2.13.0",
+			"uuid@^11.1.x": "^11.1.1"
 		}
 	},
 	"packageManager": "pnpm@10.27.0",
