@@ -56,7 +56,7 @@
     		"picomatch@^2": "2.3.2",
 			"serialize-javascript": "7.0.5",
 			"diff": "8.0.4",
-			"axios": "1.15.2",
+			"axios": "1.16.1",
 			"simple-git": "3.36.0",
 			"ip-address": "10.1.1",
 			"postcss": "8.5.10",
