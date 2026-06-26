@@ -877,8 +877,8 @@ catalogs:
       specifier: 8.46.4
       version: 8.46.4
     undici:
-      specifier: 7.24.5
-      version: 7.24.5
+      specifier: 7.28.0
+      version: 7.28.0
     universal-cookie:
       specifier: 8.0.1
       version: 8.0.1
@@ -928,8 +928,8 @@ catalogs:
       specifier: 0.5.0
       version: 0.5.0
     ws:
-      specifier: 8.20.1
-      version: 8.20.1
+      specifier: 8.21.0
+      version: 8.21.0
     zod:
       specifier: 4.1.12
       version: 4.1.12
@@ -972,7 +972,9 @@ overrides:
   liquidjs@10.25: ^10.26.0
   samlify@2.12: ^2.13.0
   uuid@11.1: ^11.1.1
-  ws@^8.18.3: ^8.20.1
+  ws@^8: 8.21.0
+  undici@^6: 6.26.0
+  undici@^7: 7.28.0
   follow-redirects: 1.16.0
   form-data@^2: 2.5.6
   form-data@^4: 4.0.6
@@ -1258,7 +1260,7 @@ importers:
         version: 9.1.0(graphql@16.12.0)
       graphql-ws:
         specifier: 'catalog:'
-        version: 6.0.6(graphql@16.12.0)(ws@8.20.1)
+        version: 6.0.6(graphql@16.12.0)(ws@8.21.0)
       helmet:
         specifier: 'catalog:'
         version: 8.1.0
@@ -1426,7 +1428,7 @@ importers:
         version: 0.5.0
       ws:
         specifier: 'catalog:'
-        version: 8.20.1
+        version: 8.21.0
       zod:
         specifier: 'catalog:'
         version: 4.1.12
@@ -2646,7 +2648,7 @@ importers:
         version: 8.1.0
       undici:
         specifier: 'catalog:'
-        version: 7.24.5
+        version: 7.28.0
     devDependencies:
       '@directus/tsconfig':
         specifier: 'catalog:'
@@ -2809,7 +2811,7 @@ importers:
         version: 4.3.1
       undici:
         specifier: 'catalog:'
-        version: 7.24.5
+        version: 7.28.0
     devDependencies:
       '@directus/tsconfig':
         specifier: 'catalog:'
@@ -2983,7 +2985,7 @@ importers:
         version: 4.6.3(vue@3.5.24(typescript@5.9.3))
       ws:
         specifier: 'catalog:'
-        version: 8.20.1
+        version: 8.21.0
       zod:
         specifier: 'catalog:'
         version: 4.1.12
@@ -3270,7 +3272,7 @@ importers:
         version: 14.1.0
       graphql-ws:
         specifier: 'catalog:'
-        version: 6.0.6(graphql@16.12.0)(ws@8.20.1)
+        version: 6.0.6(graphql@16.12.0)(ws@8.21.0)
       ioredis:
         specifier: 'catalog:'
         version: 5.8.2
@@ -3321,7 +3323,7 @@ importers:
         version: 1.6.1(@types/node@24.9.1)(happy-dom@20.8.9)(jsdom@20.0.3)(lightningcss@1.32.0)(sass-embedded@1.93.3)(sass@1.93.3)(terser@5.44.0)
       ws:
         specifier: 'catalog:'
-        version: 8.20.1
+        version: 8.21.0
 
   tests/e2e:
     devDependencies:
@@ -10499,7 +10501,7 @@ packages:
       crossws: ~0.3
       graphql: ^15.10.1 || ^16
       uWebSockets.js: ^20
-      ws: ^8.20.1
+      ws: 8.21.0
     peerDependenciesMeta:
       '@fastify/websocket':
         optional: true
@@ -14636,8 +14638,8 @@ packages:
   undici-types@7.16.0:
     resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
 
-  undici@7.24.5:
-    resolution: {integrity: sha512-3IWdCpjgxp15CbJnsi/Y9TCDE7HWVN19j1hmzVhoAkY/+CJx449tVxT5wZc1Gwg8J+P0LWvzlBzxYRnHJ+1i7Q==}
+  undici@7.28.0:
+    resolution: {integrity: sha512-cRZYrTDwWznlnRiPjggAGxZXanty6M8RV1ff8Wm4LWXBp7/IG8v5DnOm74DtUBp9OONpK75YlPnIjQqX0dBDtA==}
     engines: {node: '>=20.18.1'}
 
   unhead@1.11.20:
@@ -15306,18 +15308,6 @@ packages:
     peerDependencies:
       bufferutil: ^4.0.1
       utf-8-validate: ^5.0.2
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-
-  ws@8.20.1:
-    resolution: {integrity: sha512-It4dO0K5v//JtTXuPkfEOaI3uUN87iYPnqo/ZzqCoG3g8uhA66QUMs/SrM0YK7/NAu+r4LMh/9dq2A7k+rHs+w==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: '>=5.0.2'
     peerDependenciesMeta:
       bufferutil:
         optional: true
@@ -23848,11 +23838,11 @@ snapshots:
     dependencies:
       graphql: 16.12.0
 
-  graphql-ws@6.0.6(graphql@16.12.0)(ws@8.20.1):
+  graphql-ws@6.0.6(graphql@16.12.0)(ws@8.21.0):
     dependencies:
       graphql: 16.12.0
     optionalDependencies:
-      ws: 8.20.1
+      ws: 8.21.0
 
   graphql@16.12.0: {}
 
@@ -28532,7 +28522,7 @@ snapshots:
 
   undici-types@7.16.0: {}
 
-  undici@7.24.5: {}
+  undici@7.28.0: {}
 
   unhead@1.11.20:
     dependencies:
@@ -29383,8 +29373,6 @@ snapshots:
       write-file-atomic: 5.0.1
 
   ws@7.5.10: {}
-
-  ws@8.20.1: {}
 
   ws@8.21.0: {}
 
