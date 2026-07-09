@@ -940,7 +940,7 @@ catalogs:
 overrides:
   fast-xml-parser: 5.7.2
   '@yarnpkg/shell>cross-spawn': 7.0.6
-  tar: 7.5.13
+  tar: 7.5.16
   qs: 6.15.2
   minimatch@10: 10.2.5
   minimatch@9: 9.0.9
@@ -1413,8 +1413,8 @@ importers:
         specifier: 'catalog:'
         version: 1.9.1
       tar:
-        specifier: 7.5.13
-        version: 7.5.13
+        specifier: 7.5.16
+        version: 7.5.16
       tsdown:
         specifier: 'catalog:'
         version: 0.15.11(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(typescript@5.9.3)(vue-tsc@3.1.3(typescript@5.9.3))
@@ -14262,10 +14262,9 @@ packages:
   tar-stream@3.1.7:
     resolution: {integrity: sha512-qJj60CXt7IU1Ffyc3NJMjh6EkuCFej46zUqJ4J7pqYlThyd9bO0XBTmcOIhSzZJVWfsLks0+nle/j538YAW9RQ==}
 
-  tar@7.5.13:
-    resolution: {integrity: sha512-tOG/7GyXpFevhXVh8jOPJrmtRpOTsYqUIkVdVooZYJS/z8WhfQUX8RJILmeuJNinGAMSu1veBr4asSHFt5/hng==}
+  tar@7.5.16:
+    resolution: {integrity: sha512-56adEpPMouktRlBLXiaYFFzZ/3+JXa8P9n7WbR+ibIjtviN55mEaOkiysCnPnWm+7kkui1Dn8J9l+g6zV8731w==}
     engines: {node: '>=18'}
-    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   tarn@3.0.2:
     resolution: {integrity: sha512-51LAVKUSZSVfI05vjPESNc5vwqqZpbXCsU+/+wxlOrUjk2SnFTt97v9ZgQrD4YmxYW1Px6w2KjaDitCfkvgxMQ==}
@@ -21806,7 +21805,7 @@ snapshots:
       promise-inflight: 1.0.1
       rimraf: 3.0.2
       ssri: 8.0.1
-      tar: 7.5.13
+      tar: 7.5.16
       unique-filename: 1.1.1
     transitivePeerDependencies:
       - bluebird
@@ -21824,7 +21823,7 @@ snapshots:
       minipass-pipeline: 1.2.4
       p-map: 7.0.3
       ssri: 12.0.0
-      tar: 7.5.13
+      tar: 7.5.16
       unique-filename: 4.0.0
 
   cache-parser@1.2.6: {}
@@ -25438,7 +25437,7 @@ snapshots:
       nopt: 8.1.0
       proc-log: 5.0.0
       semver: 7.7.3
-      tar: 7.5.13
+      tar: 7.5.16
       tinyglobby: 0.2.15
       which: 5.0.0
     transitivePeerDependencies:
@@ -25454,7 +25453,7 @@ snapshots:
       npmlog: 6.0.2
       rimraf: 3.0.2
       semver: 7.7.3
-      tar: 7.5.13
+      tar: 7.5.16
       which: 2.0.2
     transitivePeerDependencies:
       - bluebird
@@ -27695,7 +27694,7 @@ snapshots:
       bindings: 1.5.0
       node-addon-api: 7.1.1
       prebuild-install: 7.1.3
-      tar: 7.5.13
+      tar: 7.5.16
     optionalDependencies:
       node-gyp: 8.4.1
     transitivePeerDependencies:
@@ -28139,7 +28138,7 @@ snapshots:
       - bare-abort-controller
       - react-native-b4a
 
-  tar@7.5.13:
+  tar@7.5.16:
     dependencies:
       '@isaacs/fs-minipass': 4.0.1
       chownr: 3.0.0

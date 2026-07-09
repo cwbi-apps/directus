@@ -36,7 +36,7 @@
 		"overrides": {
 			"fast-xml-parser": "5.7.2",
 			"@yarnpkg/shell>cross-spawn": "7.0.6",
-			"tar": "7.5.13",
+			"tar": "7.5.16",
 			"qs": "6.15.2",
 			"minimatch@10": "10.2.5",
 			"minimatch@9": "9.0.9",
