@@ -151,7 +151,7 @@ catalog:
   argon2: 0.44.0
   async: 3.2.6
   async-mutex: 0.5.0
-  axios: 1.16.1
+  axios: 1.18.1
   axios-cache-interceptor: 1.11.1
   base-64: 1.0.0
   boxen: 8.0.1
@@ -218,8 +218,8 @@ catalog:
   ioredis: 5.8.2
   ip-matching: 2.1.2
   isolated-vm: 5.0.3
-  joi: 18.0.1
-  js-yaml: 4.1.1
+  joi: 18.2.3
+  js-yaml: 4.3.0
   js2xmlparser: 5.0.0
   json-to-graphql-query: 2.3.0
   json2csv: 5.0.7
@@ -231,7 +231,7 @@ catalog:
   knex-mock-client: 3.0.2
   ky: 1.14.0
   ldapts: 8.1.3
-  liquidjs: 10.26.0
+  liquidjs: 10.27.2
   lodash: 4.18.1
   lodash-es: 4.18.1
   log-symbols: 7.0.1
