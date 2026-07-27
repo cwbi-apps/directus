@@ -79,7 +79,8 @@
 			"@types/nodemailer@^8": "8.0.1",
 			"joi@^18": "18.2.3",
 			"js-yaml@^4": "4.3.0",
-			"svgo@^4": "4.0.2"
+			"svgo@^4": "4.0.2",
+			"brace-expansion@^1": "1.1.16"
 		}
 	},
 	"packageManager": "pnpm@10.27.0",
