@@ -218,7 +218,7 @@ catalog:
   ioredis: 5.8.2
   ip-matching: 2.1.2
   isolated-vm: 5.0.3
-  joi: 18.2.3
+  joi: 18.2.9
   js-yaml: 4.3.2
   js2xmlparser: 5.0.0
   json-to-graphql-query: 2.3.0
@@ -291,7 +291,7 @@ catalog:
   sanitize-html: 2.17.6
   sass-embedded: 1.93.3
   semver: 7.7.3
-  sharp: 0.35.0
+  sharp: 0.35.4
   signal-polyfill: 0.2.2
   snappy: 7.3.3
   sqlite3: 5.1.7
